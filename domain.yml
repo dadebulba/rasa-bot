@@ -1,0 +1,26 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- chitchat
+slots:
+  email:
+    type: unfeaturized
+    influence_conversation: false
+responses:
+  utter_chitchat/ask_name:
+  - image: "https://i.imgur.com/zTvA58i.jpeg"
+    text: Ciao, mi chiamo Marisa.
+  - text: Sono il Marisa Bot!
+  utter_faq/university_size:
+  - text: "15000"
+
+actions:
+- '...'
+- utter_greet
+- utter_subscribed
+forms:
+  newsletter_form:
+    email:
+    - type: from_text

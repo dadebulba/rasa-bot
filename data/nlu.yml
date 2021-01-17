@@ -1,0 +1,12 @@
+nlu:
+- intent: chitchat/ask_name
+  examples: |
+    - Come ti chiami?
+    - Posso sapere il tuo nome?
+    - Come ti chiama la gente?
+    - Hai un nome?
+- intent: faq/university_size
+  examples: |
+    - Quanti studenti ci sono in università?
+    - Posso sapere il numero di studenti?
+    - Quante persone frequentano l'univesità?
