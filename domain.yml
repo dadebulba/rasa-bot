@@ -10,12 +10,24 @@ slots:
     influence_conversation: false
 responses:
   utter_chitchat/ask_name:
-  - image: "https://i.imgur.com/zTvA58i.jpeg"
-    text: Ciao, mi chiamo Marisa.
-  - text: Sono il Marisa Bot!
+  - text: Ciao, mi chiamo Marisa.
+  - text: Sono Marisa, al tuo servizio.
+  utter_chitchat/functionalities:
+  - text: "Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti Zoom e la didattica a distanza"
   utter_faq/university_size:
-  - text: "15000"
-
+  - text: "In università ci sono più di 15000 studenti"
+  utter_faq/auth_covid:
+  - text: "Il portale per eseguire la richiesta di autorizzazione per l’accesso alle sedi di Ateneo può essere raggiunto installando il widget “Autorizzazione Accessi Covid-19” su MyUnitn oppure direttamente all’indirizzo https://webapps.unitn.it/covid19auth/welcome"
+  utter_faq/zomm_quality:
+  - text: "Si consiglia di verificare la propria velocità di banda collegandosi, ad esempio, al sito www.speedtest.net e cliccando sul comando “GO”. Il test fornisce una fotografia dello stato della propria rete in quel preciso momento: la situazione ottimale è che la banda in upload sia almeno di 6/8Mbps, ma molti fattori influenzano la qualità del collegamento (es. essere connessi in più utenti alla stessa rete o avere più applicazioni/siti aperti)."
+  utter_faq/mic_selection:
+  - text: "Sì, con il meeting già in corso: cliccando nella barra in basso a sinistra accanto all’icona del microfono si espande un menù per poter impostare il dispositivo di registrazione o riproduzione audio più opportuno."
+  utter_faq/zoom_lag:
+  - text: "Potrebbe trattarsi di un problema di connessione. Per migliorare la resa del meeting si consiglia di tenere aperto solo Zoom e chiudere tutto quello che non è necessario e che potrebbe 'consumare' banda internet (posta elettronica, siti, etc.). Al personale dell’Ateneo che si connette al proprio pc da remoto si raccomanda di non usare la VDI per collegarsi a meeting in Zoom"
+  utter_faq/zoom_recording:
+  - text: "La registrazione di video meeting occupa circa 200 MB per ogni ora. Ma dipende molto da cosa si condivide sullo schermo e dalle impostazioni di registrazione settate nell’account. Se si condividono video, immagini in movimento e se si registra in alta definizione, i file video della registrazione saranno più grandi."
+  utter_faq/zoom_share_screen:
+  - text: "Quando si condivide il proprio desktop (Share Screen → Screen) è necessario ricordarsi di selezionare la voce “Share computer sound”, in basso a sinistra) se si desidera che l'audio della risorsa che si desidera mostrare sia disponibile anche per i/le partecipanti."
 actions:
 - '...'
 - utter_greet

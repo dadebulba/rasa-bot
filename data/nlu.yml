@@ -5,8 +5,37 @@ nlu:
     - Posso sapere il tuo nome?
     - Come ti chiama la gente?
     - Hai un nome?
+- intent: chitchat/functionalities
+  examples: |
+    - Cosa sai fare?
+    - Come puoi aiutarmi?
+    - Cosa posso chiederti?
 - intent: faq/university_size
   examples: |
     - Quanti studenti ci sono in università?
     - Posso sapere il numero di studenti?
     - Quante persone frequentano l'univesità?
+- intent: faq/auth_covid
+  examples: |
+    - Come si accede al sistema per la richiesta di Autorizzazione COVID-19? 
+    - Come si accede in Università?
+- intent: faq/zomm_quality
+  examples: |
+    - Che connessione devo avere per tenere un meeting con Zoom di buona qualità?
+    - La mia connessione supporta Zoom?
+- intent: faq/mic_selection
+  examples: |
+    - Posso scegliere il microfono da usare durante il meeting?
+    - Come posso scegliere il microfono per Zoom?
+- intent: faq/zoom_lag
+  examples: |
+    - Quando faccio un meeting con Zoom a volte la mia immagine e l’audio vanno a scatti, come posso fare?
+    - Non vedo bene lo streaming su Zoom
+- intent: faq/zoom_recording
+  examples: |
+    - Vorrei registrare un meeting: quanto spazio occupa un’ora di registrazione nella memoria del mio computer?
+    - Quanto spazio mi serve per registrare un meeting Zoom?
+- intent: faq/zoom_share_screen
+  examples: |
+    - Quando mostro contenuti multimediali tramite la condivisione del mio desktop i/le partecipanti dicono di non sentire l'audio: come mai?
+    - Non riesco a condividere l'audio su Zoom
