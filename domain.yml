@@ -13,7 +13,20 @@ responses:
   - text: Ciao, mi chiamo Marisa.
   - text: Sono Marisa, al tuo servizio.
   utter_chitchat/functionalities:
-  - text: "Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti Zoom e la didattica a distanza"
+  - text: >
+    Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti: \n 
+    - Ammissioni \n 
+    - Immatricolazioni \n 
+    - Rinnovo iscrizioni \n 
+    - Iscrizione a corsi singoli \n 
+    - Tasse universitarie \n 
+    - Borse di studio esoneri e agevolazioni \n 
+    - Studiare e laurearsi \n
+    - Trasferirsi e cambiare corso \n
+    - Sospensione e ripresa degli studi \n
+    - Riconoscimenti e abbreviazioni \n
+    - Documenti e attestazioni \n
+    - Supporto studenti
   utter_faq/university_size:
   - text: "In università ci sono più di 15000 studenti"
   utter_faq/auth_covid:
@@ -28,6 +41,32 @@ responses:
   - text: "La registrazione di video meeting occupa circa 200 MB per ogni ora. Ma dipende molto da cosa si condivide sullo schermo e dalle impostazioni di registrazione settate nell’account. Se si condividono video, immagini in movimento e se si registra in alta definizione, i file video della registrazione saranno più grandi."
   utter_faq/zoom_share_screen:
   - text: "Quando si condivide il proprio desktop (Share Screen → Screen) è necessario ricordarsi di selezionare la voce “Share computer sound”, in basso a sinistra) se si desidera che l'audio della risorsa che si desidera mostrare sia disponibile anche per i/le partecipanti."
+  utter_topic/ammissioni:
+  - text: "asd"
+  utter_topic/immatricolazioni:
+  - text: "asd"
+  utter_topic/rinnovo_iscrizioni:
+  - text: "asd"
+  utter_topic/corsi_singoli:
+  - text: "asd"
+  utter_topic/tasse:
+  - text: "asd"
+  utter_topic/borse_studio:
+  - text: "asd"
+  utter_topic/studiare-e-laurearsi:
+  - text: "asd"
+  utter_topic/trasferirsi-e-cambiare-corso:
+  - text: "asd"
+  utter_topic/sospensione-e-ripresa-degli-studi:
+  - text: "asd"
+  utter_topic/riconoscimenti-e-abbreviazioni:
+  - text: "asd"
+  utter_topic/documenti-e-attestazioni:
+  - text: "asd"
+  utter_topic/supporto-studenti:
+  - text: "asd"
+  utter_ammissioni:
+  - 
 actions:
 - '...'
 - utter_greet

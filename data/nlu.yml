@@ -39,3 +39,39 @@ nlu:
   examples: |
     - Quando mostro contenuti multimediali tramite la condivisione del mio desktop i/le partecipanti dicono di non sentire l'audio: come mai?
     - Non riesco a condividere l'audio su Zoom
+- intent: topic/ammissioni
+  - examples: |
+    - Bandi di ammissione, Iscrizione alle prove di selezione
+- intent: topic/immatricolazioni
+  - examples: |
+    - Domande online, modulistica, documenti e scadenze
+- intent: topic/rinnovo_iscrizioni
+  - examples: |
+    - Rinnovo con borsa di studio, con pagamento tasse e per studenti con disabilità o bisogni speciali
+- intent: topic/corsi_singoli
+  - examples: |
+    - Iscrizione ai corsi singoli standard, corsi singoli per l'accesso alle Lauree magistrali
+- intent: topic/tasse
+  - examples: |
+    - Tasse e contributi universitari, pagamenti, rimborsi
+- intent: topic/borse_studio
+  - examples: |
+    - Borse di studio, esoneri, libera circolazione trasporti pubblici, attesa di laurea
+intent: topic/studiare-e-laurearsi
+  - examples: |
+    - Piani di studio, Domanda di laurea - conseguimento titolo
+- intent: topic/trasferirsi-e-cambiare-corso
+  - examples: |
+    - Trasferimenti, passaggi di corso.
+- intent: topic/sospensione-e-ripresa-degli-studi
+  - examples: |
+    - Sospensione e interruzione temporanea degli studi, rinuncia agli studi, decadenza
+- intent: topic/riconoscimenti-e-abbreviazioni
+  - examples: |
+    - Riconoscimento titoli di studio stranieri, Abbreviazione di carriera.
+- intent: topic/documenti-e-attestazioni
+  - examples: |
+    - Assistenza sanitaria per studenti non residenti in Trentino, Identità "alias" per persone transgender
+- intent: topic/supporto-studenti
+  - examples: |
+    -
