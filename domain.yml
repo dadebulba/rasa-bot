@@ -4,10 +4,15 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - chitchat
+entities:
+  - study_course
+
 slots:
-  email:
-    type: unfeaturized
+  study_course:
+    type: text
     influence_conversation: false
+    auto_fill: false
+
 responses:
   utter_chitchat/ask_name:
   - text: Ciao, mi chiamo Marisa.
