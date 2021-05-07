@@ -6,9 +6,14 @@ intents:
 - chitchat
 entities:
   - study_course
+  - course_type
 
 slots:
   study_course:
+    type: text
+    influence_conversation: false
+    auto_fill: false
+  course_type:
     type: text
     influence_conversation: false
     auto_fill: false
