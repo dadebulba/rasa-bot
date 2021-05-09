@@ -12,16 +12,21 @@ rules:
  #  - action: newsletter_form
  #  - active_loop: null
  #  - action: utter_subscribed
-- rule: welcome user
-  conversation_start: true  # this rule only applies at the beginning of a conversation
-  steps:
-    - intent: chitchat/functionalities
-    - action: utter_chitchat/functionalities
- - rule: respond to FAQs
-   steps:
+  - rule: welcome user
+    conversation_start: true  # this rule only applies at the beginning of a conversation
+    steps:
+      - intent: chitchat/functionalities
+      - action: utter_chitchat/functionalities
+  - rule: respond to FAQs
+    steps:
     - intent: faq
     - action: utter_faq
- - rule: respond to chitchat
-   steps:
+  - rule: respond to chitchat
+    steps:
     - intent: chitchat
     - action: utter_chitchat
+  - rule: activate ammissioni form
+    steps:
+    - intent: topic/ammissioni
+    - action: course_type_form
+    - active_loop: course_type_form

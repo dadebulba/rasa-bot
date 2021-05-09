@@ -7,7 +7,7 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-# from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List
 #
 # from rasa_sdk import Action, Tracker
 # from rasa_sdk.executor import CollectingDispatcher
@@ -26,7 +26,7 @@
 #
 #         return []
 
-import * from db 
+import actions.db as db
 import difflib
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormValidationAction
@@ -60,6 +60,10 @@ class ValidateCourseTypeForm(FormValidationAction):
         best_match = difflib.get_close_matches(value,db.course_types,1, cutoff=0.5)
         if len(best_match) > 0:
             # validation succeeded, set the value of the "cuisine" slot to value
+            if "Laurea Triennale" in best_match[0] or "Laurea a Ciclo Unico" in best_match[0]:
+                dispatcher.utter_message(response="utter_topic/ammissioni_triennale")
+            else:
+                dispatcher.utter_message(response="utter_topic/ammissioni_magistrale")
             return {"course_type": best_match[0]}
         else:
             dispatcher.utter_message(response="utter_wrong_course_type")

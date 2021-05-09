@@ -23,20 +23,7 @@ responses:
   - text: Ciao, mi chiamo Marisa.
   - text: Sono Marisa, al tuo servizio.
   utter_chitchat/functionalities:
-  - text: >
-    Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti: \n 
-    - Ammissioni \n 
-    - Immatricolazioni \n 
-    - Rinnovo iscrizioni \n 
-    - Iscrizione a corsi singoli \n 
-    - Tasse universitarie \n 
-    - Borse di studio esoneri e agevolazioni \n 
-    - Studiare e laurearsi \n
-    - Trasferirsi e cambiare corso \n
-    - Sospensione e ripresa degli studi \n
-    - Riconoscimenti e abbreviazioni \n
-    - Documenti e attestazioni \n
-    - Supporto studenti
+  - text: Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti\n    Ammissioni\n    Immatricolazioni\n    Rinnovo iscrizioni \n    Iscrizione a corsi singoli \n    Tasse universitarie \n    Borse di studio esoneri e agevolazioni \n    Studiare e laurearsi\n    Trasferirsi e cambiare corso\n    Sospensione e ripresa degli studi\n    Riconoscimenti e abbreviazioni\n    Documenti e attestazioni\n    Supporto studenti
   utter_faq/university_size:
   - text: "In università ci sono più di 15000 studenti"
   utter_faq/auth_covid:
@@ -51,8 +38,10 @@ responses:
   - text: "La registrazione di video meeting occupa circa 200 MB per ogni ora. Ma dipende molto da cosa si condivide sullo schermo e dalle impostazioni di registrazione settate nell’account. Se si condividono video, immagini in movimento e se si registra in alta definizione, i file video della registrazione saranno più grandi."
   utter_faq/zoom_share_screen:
   - text: "Quando si condivide il proprio desktop (Share Screen → Screen) è necessario ricordarsi di selezionare la voce “Share computer sound”, in basso a sinistra) se si desidera che l'audio della risorsa che si desidera mostrare sia disponibile anche per i/le partecipanti."
-  utter_topic/ammissioni:
-  - text: "asd"
+  utter_topic/ammissioni_triennale:
+  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico"
+  utter_topic/ammissioni_magistrale:
+  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali"
   utter_topic/immatricolazioni:
   - text: "asd"
   utter_topic/rinnovo_iscrizioni:
@@ -75,13 +64,23 @@ responses:
   - text: "asd"
   utter_topic/supporto-studenti:
   - text: "asd"
-  utter_ammissioni:
-  - 
+  utter_ask_study_course_form_study_course:
+  - text: "Per quale corso di laurea vuoi ricevere informazioni?"
+  utter_ask_course_type_form_course_type:
+  - text: "Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)"
+  utter_wrong_study_course:
+      - text: "Tipo di corso di studi non valido, puoi chiedere informazioni su Lauree Triennali, Magistrali o a ciclo unico"
 actions:
-- '...'
-- utter_greet
-- utter_subscribed
+- validate_course_type_form
 forms:
-  newsletter_form:
+  study_course_form:
+    study_course:
+    - type: from_entity
+      entity: study_course
+  course_type_form:
+    course_type:
+    - type: from_entity
+      entity: course_type
+  contact_form:
     email:
     - type: from_text
