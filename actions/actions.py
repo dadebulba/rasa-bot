@@ -3,8 +3,10 @@ from typing import Dict, Text, Any, List, Union
 from rasa_sdk import Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormValidationAction
+from rasa_sdk.interfaces import Action
 import difflib
 import logging
+import actions.db as db
 logger = logging.getLogger(__name__)
 logging.basicConfig(level='DEBUG')
 logger.debug("starting actions")
@@ -119,7 +121,7 @@ class ValidateCourseForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate cuisine value."""
         logger.debug("Course type action")
-        best_match = difflib.get_close_matches(slot_value,self.course_db(),1, cutoff=0.5)
+        best_match = difflib.get_close_matches(slot_value,db.course_types,1, cutoff=0.5)
         logger.debug(best_match)
         if len(best_match) > 0:
             logger.debug(best_match[0])
@@ -136,3 +138,20 @@ class ValidateCourseForm(FormValidationAction):
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
             return {"course": None}
+
+class ActionStudyPlan(Action):
+    def name(self):
+        return 'action_study_plan'
+
+    def run(self, dispatcher, tracker, domain):
+        course = tracker.get_slot("course")
+        studies = tracker.get_slot("studies")
+        if "Laurea Triennale" == course:
+            for el in db.study_plan_triennali:
+                if studies in el[0]: 
+                    dispatcher.utter_message("Prova a vedere se qui ci sono le informazioni che stai cercando: " + el[1])
+        else:
+            for el in db.study_plan_magistrali:
+                if studies in el[0]: 
+                    dispatcher.utter_message("Prova a vedere se qui ci sono le informazioni che stai cercando: " + el[1])
+        return []
