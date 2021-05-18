@@ -20,27 +20,14 @@ rules:
       - intent: chitchat
       - action: utter_chitchat
 
-  - rule: activate restaurant form
+  - rule: functionalities
     steps:
-      - intent: request_restaurant
-      - action: restaurant_form
-      - active_loop: restaurant_form
+      - intent: functionalities
+      - action: utter_functionalities
 
-  - rule: submit form
-    condition:
-    - active_loop: restaurant_form
+  # form --- TIPO DI LAUREA ---
+  - rule: activate course form
     steps:
-      - action: restaurant_form
-      - active_loop: null
-      - action: utter_submit
-      - action: utter_slots_values
-  - rule: welcome user
-    conversation_start: true  # this rule only applies at the beginning of a conversation
-    steps:
-      - action: functionalities
-  - rule: activate ammissioni form
-    steps:
-    - intent: topic/ammissioni
     - action: course_form
     - active_loop: course_form
   - rule: submit course form
@@ -51,3 +38,36 @@ rules:
       - active_loop: null
       - action: utter_submit
       - action: utter_slots_values
+  # form --- CORSO DI STUDI ---
+  - rule: activate studies form
+    steps:
+    - action: studies_form
+    - active_loop: studies_form
+  - rule: submit studies form
+    condition:
+    - active_loop: studies_form
+    steps:
+      - action: studies_form
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+  # action --- PIANO STUDI ---
+  - rule: change study plan action
+    steps:
+    - intent: topic/piano-studi
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - requested_slot: studies
+    - action: action_study_plan
+  - rule: admissions action activate form
+    steps:
+    - action: action_study_plan
+
+  # action --- AMMISSIONi ---
+  - rule: admissions action
+    steps:
+    - intent: topic/ammissioni
+    - slot_was_set:
+      - requested_slot: course
+    - action: action_admissions

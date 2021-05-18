@@ -10,6 +10,7 @@ intents:
   - thankyou
   - greet
   - bot_challenge
+  - functionalities
 
 entities:
   - feedback
@@ -23,10 +24,10 @@ slots:
     auto_fill: false
   studies:
     type: text
-    influence_conversation: false
+    influence_conversation: true
   course:
     type: text
-    influence_conversation: false
+    influence_conversation: true
 
 responses:
   utter_ask_feedback:
@@ -85,11 +86,9 @@ responses:
   - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/tasse-universitarie"
   utter_topic/borse_studio:
   - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni"
-  utter_topic/studiare-e-laurearsi:
-  - text: "Vuoi cambiare piano di studio o fare richiesta per laurearti?"
-  utter_topic/studiare-e-laurearsi_laurea_triennale:
+  utter_topic/laurearsi-laurea-triennale:
   - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali"
-  utter_topic/studiare-e-laurearsi_laurea_magistrale:
+  utter_topic/laurearsi-laurea-magistrale:
   - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico"
   utter_topic/trasferirsi-e-cambiare-corso:
   - text: "asd"
@@ -104,42 +103,17 @@ responses:
   utter_ask_course:
   - text: "Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)"
   utter_wrong_course:
-      - text: "Tipo di corso di studi non valido, puoi chiedere informazioni su Lauree Triennali, Magistrali o a ciclo unico"
+    - text: "Tipo di corso di studi non valido, puoi chiedere informazioni su Lauree Triennali, Magistrali o a ciclo unico"
+  utter_ask_studies:
+    - text: "Per quele tipo di corso di studi sei interessato a ricevere informazioni?"
   utter_wrong_studies:
     - text: "Corso di studi non presente nell'Università di Trento, prova con un altro corso"
-
 actions:
 - validate_course_form
-
+- validate_studies_form
+- action_study_plan
+- action_admissions
 forms:
-#  restaurant_form:
-#    cuisine:
-#    - type: from_entity
-#      entity: cuisine
-#      not_intent: chitchat
-#    num_people:
-#    - type: from_entity
-#      entity: number
-#      intent: [inform, request_restaurant]
-#    outdoor_seating:
-#    - type: from_entity
-#      entity: seating
-#    - type: from_intent
-#      intent: affirm
-#      value: true
-#    - type: from_intent
-#      intent: deny
-#      value: false
-#    preferences:
-#    - type: from_intent
-#      intent: deny
-#      value: no additional preferences
-#    - type: from_text
-#      not_intent: affirm
-#    feedback:
-#    - type: from_entity
-#      entity: feedback
-#    - type: from_text
   course_form:
     course:
       - type: from_entity
