@@ -25,36 +25,42 @@ rules:
       - intent: functionalities
       - action: utter_functionalities
 
-  # form --- TIPO DI LAUREA ---
+  # form --- AMMISSIONI ---
   - rule: activate course form
     steps:
     - intent: ammissioni
-    - action: course_form
-    - active_loop: course_form
+    - action: studies_form
+    - active_loop: studies_form
 
   - rule: submit course form
     condition:
-    - active_loop: course_form
+    - active_loop: studies_form
     steps:
-      - action: course_form
+      - intent: ammissioni
+      - action: studies_form
       - active_loop: null
       - action: utter_submit
       - action: utter_slots_values
-  # form --- CORSO DI STUDI ---
+      - action: action_admissions
+
+  # form --- CAMBIO PIANO DI STUDI ---
   - rule: activate studies form
     steps:
     - intent: piano_studi
     - action: studies_form
     - active_loop: studies_form
 
+  # form --- END INPUT ---
   - rule: submit studies form
     condition:
     - active_loop: studies_form
     steps:
+      - intent: piano_studi
       - action: studies_form
       - active_loop: null
       - action: utter_submit
       - action: utter_slots_values
+      - action: action_study_plan
       
   # action --- PIANO STUDI ---
   #- rule: change study plan action

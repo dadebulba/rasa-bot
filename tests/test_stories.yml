@@ -1,0 +1,41 @@
+version: "2.0"
+stories:
+- story: Happy path study plan
+  steps:
+  - user: |
+      ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      vorrei cambiare piano di studi
+    intent: piano_studi
+  - action: studies_form
+  - active_loop: studies_form
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_study_plan
+  - user: |
+      grazie
+    intent: thankyou
+  - action: utter_noworries
+
+- story: Happy path admissions
+  steps:
+  - user: |
+      ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      vorrei essere ammesso a un corso 
+    intent: ammissioni
+  - action: studies_form
+  - active_loop: studies_form
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+  - action: action_admissions
+  - user: |
+      grazie
+    intent: thankyou
+  - action: utter_noworries

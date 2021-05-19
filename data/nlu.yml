@@ -23,6 +23,10 @@ nlu:
     - Ciao?
     - ehi bot!
     - Ciao amico
+    - Laurea Triennale
+    - informatica
+    - Laurea Magistrale
+    - Arte
 - intent: affirm
   examples: |
     - corretta
@@ -149,6 +153,7 @@ nlu:
     - Bandi di ammissione
     - Iscrizione alle prove di selezione
     - Voglio registrarmi a una prova di ammisisone
+    - bandi di ammissione
 - intent: topic/laurearsi
   examples: |
     - Voglio laurearmi
@@ -157,6 +162,7 @@ nlu:
   examples: |
     - Voglio cambiare piano di studi
     - Desidero cambiare piano di studi
+    - vorrei cambiare piano di studi
 - intent: functionalities
   examples: |
     - Cosa sai fare?

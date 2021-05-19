@@ -3,9 +3,11 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- greet
+- piano_studi
 - topic:
     is_retrieval_intent: true
-- greet
+- ammissioni
 - functionalities
 - chitchat:
     use_entities: []
@@ -15,8 +17,6 @@ intents:
 - stop
 - thankyou
 - bot_challenge
-- piano_studi
-- ammissioni
 entities:
 - course
 - feedback
@@ -113,15 +113,8 @@ actions:
 - utter_slots_values
 - utter_submit
 - utter_topic
-- validate_course_form
 - validate_studies_form
 forms:
-  course_form:
-    required_slots:
-      course:
-      - type: from_entity
-        entity: course
-      - type: from_text
   studies_form:
     required_slots:
       course:

@@ -10,41 +10,10 @@ import actions.db as db
 logger = logging.getLogger(__name__)
 logging.basicConfig(level='DEBUG')
 logger.debug("starting actions")
-class ValidateCourseForm(FormValidationAction):
-    """Example of a form validation action."""
 
-    def name(self) -> Text:
-        return "validate_course_form"
-    
-    def validate_course(
-        self,
-        slot_value: Any,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> Dict[Text, Any]:
-        """Validate cuisine value."""
-        logger.debug("Course form validation")
-        best_match = difflib.get_close_matches(slot_value,db.course_types,1, cutoff=0.5)
-        logger.debug(best_match)
-        if len(best_match) > 0:
-            logger.debug(best_match[0])
-            # validation succeeded, set the value of the "cuisine" slot to value
-            #if "Laurea Triennale" in best_match[0] or "Laurea a Ciclo Unico" in best_match[0]:
-            #    logger.debug("Entro in triennale ")
-            #    dispatcher.utter_message(response="utter_topic/ammissioni_triennale")
-            #else:
-            #    dispatcher.utter_message(response="utter_topic/ammissioni_magistrale")
-            #    logger.debug("Entro in magistrale ")
-            return {"course": best_match[0]}
-        else:
-            dispatcher.utter_message(response="utter_wrong_course_type")
-            # validation failed, set this slot to None, meaning the
-            # user will be asked for the slot again
-            return {"course": None}
 
 class ValidateStudiesForm(FormValidationAction):
-    """Example of a form validation action."""
+    """Form validation action."""
 
     def name(self) -> Text:
         return "validate_studies_form"
@@ -61,17 +30,9 @@ class ValidateStudiesForm(FormValidationAction):
         best_match = difflib.get_close_matches(slot_value,db.course_types,1, cutoff=0.5)
         logger.debug(best_match)
         if len(best_match) > 0:
-            logger.debug(best_match[0])
-            # validation succeeded, set the value of the "cuisine" slot to value
-            #if "Laurea Triennale" in best_match[0] or "Laurea a Ciclo Unico" in best_match[0]:
-            #    logger.debug("Entro in triennale ")
-            #    dispatcher.utter_message(response="utter_topic/ammissioni_triennale")
-            #else:
-            #    dispatcher.utter_message(response="utter_topic/ammissioni_magistrale")
-            #    logger.debug("Entro in magistrale ")
             return {"course": best_match[0]}
         else:
-            dispatcher.utter_message(response="utter_wrong_course_type")
+            dispatcher.utter_message(response="utter_wrong_course")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
             return {"course": None}
@@ -95,17 +56,9 @@ class ValidateStudiesForm(FormValidationAction):
 
         logger.debug(best_match)
         if len(best_match) > 0:
-            logger.debug(best_match[0])
-            # validation succeeded, set the value of the "cuisine" slot to value
-            #if "Laurea Triennale" in best_match[0] or "Laurea a Ciclo Unico" in best_match[0]:
-            #    logger.debug("Entro in triennale ")
-            #    dispatcher.utter_message(response="utter_topic/ammissioni_triennale")
-            #else:
-            #    dispatcher.utter_message(response="utter_topic/ammissioni_magistrale")
-            #    logger.debug("Entro in magistrale ")
             return {"studies": best_match[0]}
         else:
-            dispatcher.utter_message(response="utter_wrong_course_type")
+            dispatcher.utter_message(response="utter_wrong_studies")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
             return {"studies": None}
