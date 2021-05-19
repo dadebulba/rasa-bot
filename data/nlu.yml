@@ -144,7 +144,7 @@ nlu:
     - Sei umano?
     - sto parlando con un bot?
     - sto parlando con un umano?
-- intent: topic/ammissioni
+- intent: ammissioni
   examples: |
     - Bandi di ammissione
     - Iscrizione alle prove di selezione
@@ -153,7 +153,7 @@ nlu:
   examples: |
     - Voglio laurearmi
     - Desidero laurearmi
-- intent: topic/piano-studi
+- intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
     - Desidero cambiare piano di studi

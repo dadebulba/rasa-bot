@@ -24,7 +24,7 @@ class ValidateCourseForm(FormValidationAction):
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """Validate cuisine value."""
-        logger.debug("Course type action")
+        logger.debug("Course form validation")
         best_match = difflib.get_close_matches(slot_value,db.course_types,1, cutoff=0.5)
         logger.debug(best_match)
         if len(best_match) > 0:
@@ -49,6 +49,33 @@ class ValidateStudiesForm(FormValidationAction):
     def name(self) -> Text:
         return "validate_studies_form"
     
+    def validate_course(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        """Validate cuisine value."""
+        logger.debug("Studies form - course validation")
+        best_match = difflib.get_close_matches(slot_value,db.course_types,1, cutoff=0.5)
+        logger.debug(best_match)
+        if len(best_match) > 0:
+            logger.debug(best_match[0])
+            # validation succeeded, set the value of the "cuisine" slot to value
+            #if "Laurea Triennale" in best_match[0] or "Laurea a Ciclo Unico" in best_match[0]:
+            #    logger.debug("Entro in triennale ")
+            #    dispatcher.utter_message(response="utter_topic/ammissioni_triennale")
+            #else:
+            #    dispatcher.utter_message(response="utter_topic/ammissioni_magistrale")
+            #    logger.debug("Entro in magistrale ")
+            return {"course": best_match[0]}
+        else:
+            dispatcher.utter_message(response="utter_wrong_course_type")
+            # validation failed, set this slot to None, meaning the
+            # user will be asked for the slot again
+            return {"course": None}
+
     def validate_studies(
         self,
         slot_value: Any,
@@ -57,13 +84,14 @@ class ValidateStudiesForm(FormValidationAction):
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """Validate cuisine value."""
-        logger.debug("Course type action")
+        logger.debug("Studies form - studies validation")
         course = tracker.get_slot("course")
         best_match = None
         if course == db.course_types[0]:
-            best_match = difflib.get_close_matches(slot_value,db.lauree_triennali,1, cutoff=0.5)
+            best_match = difflib.get_close_matches(slot_value,[el[0] for el in db.lauree_triennali],1, cutoff=0.5)
         else:
-            best_match = difflib.get_close_matches(slot_value,db.lauree_magistrali + db.lauree_ciclo_unico,1, cutoff=0.5)
+            lauree = db.lauree_magistrali + db.lauree_ciclo_unico
+            best_match = difflib.get_close_matches(slot_value,[el[0] for el in lauree],1, cutoff=0.5)
 
         logger.debug(best_match)
         if len(best_match) > 0:
@@ -86,8 +114,10 @@ class ActionStudyPlan(Action):
         return 'action_study_plan'
 
     def run(self, dispatcher, tracker, domain):
+        logger.debug("Change Study Plan action")
         course = tracker.get_slot("course")
         studies = tracker.get_slot("studies")
+        logger.debug(f"Course: {course}, Studies: {studies}")
         if "Laurea Triennale" == course:
             for el in db.study_plan_triennali:
                 if studies in el[0]: 
@@ -103,6 +133,8 @@ class ActionAdmissions(Action):
 
     def run(self, dispatcher, tracker, domain):
         course = tracker.get_slot("course")
+        logger.debug("Admission action")
+        logger.debug(f"Course: {course}")
         if db.course_types[0] == course or db.course_types[1] == course:
             dispatcher.utter_message(response="utter_topic/ammissioni_triennale")
         else:

@@ -1,131 +1,134 @@
-version: "2.0"
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - chitchat:
-      use_entities: []
-  - topic
-  - inform
-  - affirm
-  - deny
-  - stop
-  - thankyou
-  - greet
-  - bot_challenge
-  - functionalities
-
+- topic:
+    is_retrieval_intent: true
+- greet
+- functionalities
+- chitchat:
+    use_entities: []
+- inform
+- affirm
+- deny
+- stop
+- thankyou
+- bot_challenge
+- piano_studi
+- ammissioni
 entities:
-  - feedback
-  - course
-  - studies
-
+- course
+- feedback
+- studies
 slots:
   feedback:
     type: text
-    influence_conversation: false
     auto_fill: false
+    influence_conversation: false
   studies:
     type: text
     influence_conversation: true
   course:
     type: text
     influence_conversation: true
-
 responses:
   utter_ask_feedback:
-    - text: "La Marisa sta facendo un buon lavoro?"
+  - text: La Marisa sta facendo un buon lavoro?
   utter_submit:
-  - text: "Grazie!"
-  - text: "Bene!"
+  - text: Grazie!
+  - text: Bene!
   utter_slots_values:
-    - text: "Ecco i parametri inseriti finora:\n
-             - feedback: {feedback}\n
-             - course: {course}\n
-             - studies: {studies}"
+  - text: |-
+      Ecco i parametri inseriti finora:
+       - feedback: {feedback}
+       - course: {course}
+       - studies: {studies}
   utter_noworries:
-    - text: "Prego :)"
+  - text: Prego :)
   utter_chitchat:
-    - text: "Mi chiamo Marisa, come posso esserti utile?"
-    - text: "Ciao, mi chiamo Marisa."
-    - text: "Sono Marisa, al tuo servizio."
+  - text: Mi chiamo Marisa, come posso esserti utile?
+  - text: Ciao, mi chiamo Marisa.
+  - text: Sono Marisa, al tuo servizio.
   utter_ask_continue:
-    - text: "Vuoi continuare?"
+  - text: Vuoi continuare?
   utter_default:
-    - text: "Scusa, non ho capito, prova a chiedermi qualcosa d'altro"
+  - text: Scusa, non ho capito, prova a chiedermi qualcosa d'altro
   utter_greet:
-    - text: "Ciao! Sono Marisa l'assistente agli studenti di UniTN! Come posso aiutarti?"
+  - text: Ciao! Sono Marisa l'assistente agli studenti di UniTN! Come posso aiutarti?
   utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
+  - text: I am a bot, powered by Rasa.
   utter_restart:
-    - text: "restarted"
+  - text: restarted
   utter_functionalities:
-  - text: "Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti:\n
-          - Ammissioni\n
-          - Immatricolazioni\n
-          - Rinnovo iscrizioni\n
-          - Iscrizione a corsi singoli\n
-          - Tasse universitarie\n
-          - Borse di studio esoneri e agevolazioni\n
-          - Studiare e laurearsi\n
-          - Trasferirsi e cambiare corso\n
-          - Sospensione e ripresa degli studi\n
-          - Riconoscimenti e abbreviazioni\n    
-          - Documenti e attestazioni\n    
-          - Supporto studenti"
+  - text: |-
+      Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti:
+       - Ammissioni
+       - Immatricolazioni
+       - Rinnovo iscrizioni
+       - Iscrizione a corsi singoli
+       - Tasse universitarie
+       - Borse di studio esoneri e agevolazioni
+       - Studiare e laurearsi
+       - Trasferirsi e cambiare corso
+       - Sospensione e ripresa degli studi
+       - Riconoscimenti e abbreviazioni
+       - Documenti e attestazioni
+       - Supporto studenti
   utter_topic/ammissioni_triennale:
-    - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico'
   utter_topic/ammissioni_magistrale:
-    - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali'
   utter_topic/immatricolazioni_triennale:
-  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico'
   utter_topic/immatricolazioni_magistrale:
-  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-magistrali"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-magistrali'
   utter_topic/rinnovo_iscrizioni:
-  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/rinnovo-iscrizioni"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/rinnovo-iscrizioni'
   utter_topic/corsi_singoli:
-  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/iscrizione-corsi-singoli"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/iscrizione-corsi-singoli'
   utter_topic/tasse:
-  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/tasse-universitarie"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/tasse-universitarie'
   utter_topic/borse_studio:
-  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni'
   utter_topic/laurearsi-laurea-triennale:
-  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali'
   utter_topic/laurearsi-laurea-magistrale:
-  - text: "Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico"
-  utter_topic/trasferirsi-e-cambiare-corso:
-  - text: "asd"
-  utter_topic/sospensione-e-ripresa-degli-studi:
-  - text: "asd"
-  utter_topic/riconoscimenti-e-abbreviazioni:
-  - text: "asd"
-  utter_topic/documenti-e-attestazioni:
-  - text: "asd"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico'
   utter_topic/supporto-studenti:
-  - text: "asd"
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/prenotazione-sportello-studenti'
   utter_ask_course:
-  - text: "Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)"
+  - text: Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)
   utter_wrong_course:
-    - text: "Tipo di corso di studi non valido, puoi chiedere informazioni su Lauree Triennali, Magistrali o a ciclo unico"
+  - text: Tipo di corso di studi non valido, puoi chiedere informazioni su Lauree Triennali, Magistrali o a ciclo unico
   utter_ask_studies:
-    - text: "Per quele tipo di corso di studi sei interessato a ricevere informazioni?"
+  - text: Per quele tipo di corso di studi sei interessato a ricevere informazioni?
   utter_wrong_studies:
-    - text: "Corso di studi non presente nell'Università di Trento, prova con un altro corso"
+  - text: Corso di studi non presente nell'Università di Trento, prova con un altro corso
 actions:
+- action_admissions
+- action_study_plan
+- utter_functionalities
+- utter_greet
+- utter_slots_values
+- utter_submit
+- utter_topic
 - validate_course_form
 - validate_studies_form
-- action_study_plan
-- action_admissions
 forms:
   course_form:
-    course:
+    required_slots:
+      course:
       - type: from_entity
         entity: course
       - type: from_text
   studies_form:
-    studies:
+    required_slots:
+      course:
+      - type: from_entity
+        entity: course
+      - type: from_text
+      studies:
       - type: from_entity
         entity: studies
       - type: from_text
-    
-
-session_config:
-  session_expiration_time: 60  # value in minutes
-  carry_over_slots_to_new_session: true
