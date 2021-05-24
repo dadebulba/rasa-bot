@@ -29,8 +29,7 @@ nlu:
     - Arte
 - intent: affirm
   examples: |
-    - corretta
-    - ye
+    - corretto
     - ehm si
     - Facciamolo
     - si
@@ -38,9 +37,7 @@ nlu:
     - si si
     - giusto
     - sì giusto
-    - si e non mi interessa
-    - proprio su
-    - lo amo
+    - adoro
 - intent: deny
   examples: |
     - no
@@ -169,3 +166,31 @@ nlu:
     - Come puoi aiutarmi?
     - Cosa posso chiederti?
     - cosa sai fare?
+- intent: topic/rinnovo_iscrizioni
+  examples: |
+    - Vorrei rinnovare l'iscrizione al mio corso di studi
+    - Voglio rinnovare l'iscrizione all'università
+- intent: topic/corsi_singoli
+  examples: |
+    - Vorrei registrarmi ad un corso singolo
+    - Vorrei iscrivermi ad un corso non presente sul piano di studi
+    - Vorrei iscrivermi ad un corso extra
+    - Vorrei iscrivermi ad un corso extracurricolare
+- intent: topic/tasse
+  examples: |
+    - Quante tasse devo pagare?
+    - Vorrei sapere dove pagare le tasse
+    - Mi servirebbero informazioni sulle tasse
+    - Tasse anno accademico
+- intent: topic/borse_studio
+  examples: |
+    - Vorrei accedere alla borsa di studio
+    - Ci sono alloggi disponibili per borse di studio
+    - Come richiedere la borsa di studio
+- intent: topic/supporto-studenti
+  examples: |
+    - Vorrei contattare il supporto studenti
+    - Qual è il numero della segreteria?
+    - Quando è aperta la segreteria?
+    - Supporto studenti del dipartimento
+

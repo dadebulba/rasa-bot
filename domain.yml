@@ -5,8 +5,7 @@ session_config:
 intents:
 - greet
 - piano_studi
-- topic:
-    is_retrieval_intent: true
+- topic
 - ammissioni
 - functionalities
 - chitchat:

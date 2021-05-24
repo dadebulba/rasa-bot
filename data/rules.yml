@@ -25,6 +25,11 @@ rules:
       - intent: functionalities
       - action: utter_functionalities
 
+  - rule: topics
+    steps:
+      - intent: topic
+      - action: utter_topic
+      
   # form --- AMMISSIONI ---
   - rule: activate course form
     steps:
