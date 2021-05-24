@@ -1,8 +1,67 @@
-#stories:
-# - story: greet and subscribe
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: subscribe
-#   - action: newsletter_form
-#   - active_loop: newsletter_form
+version: "2.0"
+stories:
+  - story: require admission info
+    steps:
+      - intent: ammisisoni
+      - action: studies_form
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: action_admissions
+
+  - story: require change study plan
+    steps:
+      - intent: piano_studi
+      - action: studies_form
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: action_study_plan
+
+  - story: admission info
+    steps:
+      - intent: ammisisoni
+      - action: utter_slots_values
+      - slot_was_set:
+        - requested_slot: course
+      - action: action_admissions
+
+  - story: interactive_story_1
+    steps:
+    - intent: ammissioni
+    - action: studies_form
+    - active_loop: studies_form
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - course: Laurea Triennale
+    - slot_was_set:
+      - requested_slot: studies
+    - slot_was_set:
+      - studies: Informatica
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_submit
+    - action: utter_slots_values
+    - action: action_admissions
+
+  - story: interactive_story_2
+    steps:
+    - intent: piano_studi
+    - action: studies_form
+    - active_loop: studies_form
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - course: Laurea Magistrale
+    - slot_was_set:
+      - requested_slot: studies
+    - slot_was_set:
+      - studies: Arte
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_submit
+    - action: utter_slots_values
+    - action: action_study_plan

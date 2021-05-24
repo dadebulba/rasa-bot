@@ -1,112 +1,95 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
+from typing import Dict, Text, Any, List, Union
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
-from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
-import actions.db as db
-import difflib
+from rasa_sdk import Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormValidationAction
-from rasa_sdk import Action, Tracker
+from rasa_sdk.interfaces import Action
+import difflib
+import logging
+import actions.db as db
+logger = logging.getLogger(__name__)
+logging.basicConfig(level='DEBUG')
+logger.debug("starting actions")
 
-class ValidateCourseTypeForm(FormValidationAction):
-    """Example of a form validation action."""
 
-    def name(self) -> Text:
-        return "validate_course_type_form"
-
-    @staticmethod
-    def is_int(string: Text) -> bool:
-        """Check if a string is an integer."""
-
-        try:
-            int(string)
-            return True
-        except ValueError:
-            return False
-
-    
-    def validate_course_type(
-        self,
-        value: Text,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
-    ) -> Dict[Text, Any]:
-        """Validate cuisine value."""
-        best_match = difflib.get_close_matches(value,db.course_types,1, cutoff=0.5)
-        if len(best_match) > 0:
-            # validation succeeded, set the value of the "cuisine" slot to value
-            if "Laurea Triennale" in best_match[0] or "Laurea a Ciclo Unico" in best_match[0]:
-                dispatcher.utter_message(response="utter_topic/ammissioni_triennale")
-            else:
-                dispatcher.utter_message(response="utter_topic/ammissioni_magistrale")
-            return {"course_type": best_match[0]}
-        else:
-            dispatcher.utter_message(response="utter_wrong_course_type")
-            # validation failed, set this slot to None, meaning the
-            # user will be asked for the slot again
-            return {"course_type": None}
-class ValidateCourseChoiceForm(FormValidationAction):
-    """Example of a form validation action."""
+class ValidateStudiesForm(FormValidationAction):
+    """Form validation action."""
 
     def name(self) -> Text:
-        return "validate_course_form"
-
-    @staticmethod
-    def is_int(string: Text) -> bool:
-        """Check if a string is an integer."""
-
-        try:
-            int(string)
-            return True
-        except ValueError:
-            return False
-
+        return "validate_studies_form"
     
     def validate_course(
         self,
-        value: Text,
+        slot_value: Any,
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """Validate cuisine value."""
-        course_type = tracker.get_slot("course_type")
-        if course_type is "Laurea Triennale":
-            best_match = difflib.get_close_matches(value,db.lauree_triennali,1, cutoff=0.5)
-        elif course_type is "Laurea a Ciclo Unico":
-            best_match = difflib.get_close_matches(value,db.lauree_ciclo_unico,1, cutoff=0.5)
-        elif course_type is "Laurea Magistrale":
-            best_match = difflib.get_close_matches(value,db.lauree_magistrali,1, cutoff=0.5)
+        logger.debug("Studies form - course validation")
+        best_match = difflib.get_close_matches(slot_value,db.course_types,1, cutoff=0.5)
+        logger.debug(best_match)
         if len(best_match) > 0:
-            # validation succeeded, set the value of the "cuisine" slot to value
-            return {"study_course": best_match[0]}
+            return {"course": best_match[0]}
         else:
-            dispatcher.utter_message(response="utter_wrong_study_course")
+            dispatcher.utter_message(response="utter_wrong_course")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
-            return {"study_course": None}
+            return {"course": None}
+
+    def validate_studies(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        """Validate cuisine value."""
+        logger.debug("Studies form - studies validation")
+        course = tracker.get_slot("course")
+        best_match = None
+        if course == db.course_types[0]:
+            best_match = difflib.get_close_matches(slot_value,[el[0] for el in db.lauree_triennali],1, cutoff=0.5)
+        else:
+            lauree = db.lauree_magistrali + db.lauree_ciclo_unico
+            best_match = difflib.get_close_matches(slot_value,[el[0] for el in lauree],1, cutoff=0.5)
+
+        logger.debug(best_match)
+        if len(best_match) > 0:
+            return {"studies": best_match[0]}
+        else:
+            dispatcher.utter_message(response="utter_wrong_studies")
+            # validation failed, set this slot to None, meaning the
+            # user will be asked for the slot again
+            return {"studies": None}
+class ActionStudyPlan(Action):
+    def name(self):
+        return 'action_study_plan'
+
+    def run(self, dispatcher, tracker, domain):
+        logger.debug("Change Study Plan action")
+        course = tracker.get_slot("course")
+        studies = tracker.get_slot("studies")
+        logger.debug(f"Course: {course}, Studies: {studies}")
+        if "Laurea Triennale" == course:
+            for el in db.study_plan_triennali:
+                if studies in el[0]: 
+                    dispatcher.utter_message("Prova a vedere se qui ci sono le informazioni che stai cercando: " + el[1])
+        else:
+            for el in db.study_plan_magistrali:
+                if studies in el[0]: 
+                    dispatcher.utter_message("Prova a vedere se qui ci sono le informazioni che stai cercando: " + el[1])
+        return []
+class ActionAdmissions(Action):
+    def name(self):
+        return 'action_admissions'
+
+    def run(self, dispatcher, tracker, domain):
+        course = tracker.get_slot("course")
+        logger.debug("Admission action")
+        logger.debug(f"Course: {course}")
+        if db.course_types[0] == course or db.course_types[1] == course:
+            dispatcher.utter_message(response="utter_topic/ammissioni_triennale")
+        else:
+            dispatcher.utter_message(response="utter_topic/ammissioni_magistrale")
+        return []

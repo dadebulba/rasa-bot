@@ -1,78 +1,196 @@
+version: "2.0"
 nlu:
-- intent: chitchat/ask_name
+- intent: greet
   examples: |
-    - Come ti chiami?
-    - Posso sapere il tuo nome?
-    - Come ti chiama la gente?
-    - Hai un nome?
-- intent: chitchat/functionalities
+    - Ciao
+    - Hey
+    - Ciao bot
+    - Ehi bot
+    - Buongiorno
+    - Ciao di nuovo
+    - Ciao gente
+    - ciao Mister
+    - ciao amico!
+    - saluti
+    - Ciao a tutti
+    - ciao c'è qualcuno lì
+    - ciao robot
+    - ciao
+    - heeey
+    - ciao ciao
+    - ehi ehi
+    - yo
+    - Ciao?
+    - ehi bot!
+    - Ciao amico
+    - Laurea Triennale
+    - informatica
+    - Laurea Magistrale
+    - Arte
+- intent: affirm
+  examples: |
+    - corretto
+    - ehm si
+    - Facciamolo
+    - si
+    - è corretto
+    - si si
+    - giusto
+    - sì giusto
+    - adoro
+- intent: deny
+  examples: |
+    - no
+    - nessuna nuova selezione
+    - no grazie
+    - uh no
+    - ehm no
+    - hai qualcos'altro
+    - no questo non funziona per me
+- intent: inform
+  examples: |
+    - il mio feedback è [buono](feedback)
+    - il mio feedback è [ottimo](feedback)
+    - era [terribile](feedback)
+    - lo considero [successo](feedback)
+    - sei [terribile](feedback)
+- intent: thankyou
+  examples: |
+    - ehm grazie arrivederci
+    - okay cool uh arrivederci grazie
+    - va bene grazie arrivederci
+    - Sei forte
+    - e questo è tutto grazie e arrivederci
+    - grazie e arrivederci
+    - scusa per i miei errori grazie arrivederci
+    - rumore grazie arrivederci
+    - grazie arrivederci rumore
+    - uh grazie arrivederci
+    - grazie arrivederci
+    - grazie arrivederci rumore grazie arrivederci
+    - respiro grazie arrivederci
+    - grazie
+    - okay grazie
+    - Grazie arrivederci
+    - ah grazie arrivederci
+    - grazie rumore
+    - respiro grazie mille arrivederci
+    - Grazie
+    - incomprensibile grazie arrivederci
+    - uh okay grazie arrivederci
+    - grazie ciao
+    - ehm okay grazie arrivederci
+- intent: chitchat
+  examples: |
+    - puoi condividere il tuo capo con me?
+    - Voglio conoscere il tuo proprietario
+    - Voglio conoscere l'azienda che ti ha progettato
+    - Voglio conoscere l'azienda che ti ha generato
+    - Voglio conoscere l'azienda che ti ha inventato
+    - Voglio sapere chi ti ha inventato
+    - Posso chiedere chi ti ha inventato?
+    - per favore dimmi l'azienda che ti ha creato
+    - per favore dimmi chi ti ha creato
+    - dimmi di più sui tuoi creatori
+    - dimmi di più sui tuoi fondatori
+    - Ahoy matey come stai?
+    - stai bene
+    - stai passando una buona giornata
+    - Stai bene?
+    - Ti senti bene?
+    - come vanno le cose
+    - come vanno le cose con te?
+    - Come vanno le cose?
+    - come va
+    - come te la passi
+    - come va stamattina
+    - come ti senti
+    - come stai oggi
+    - Come stai?
+    - Come è il tempo oggi?
+    - Che tempo fa?
+    - Com'è il tempo?
+    - Che tempo fa a casa tua?
+    - Hai bel tempo?
+    - Sta piovendo?
+    - Com'è là fuori?
+    - Fa caldo o fa freddo?
+    - Bella giornata, vero?
+    - Quali sono le previsioni del tempo?
+    - È abbastanza ventilato fuori?
+- intent: stop
+  examples: |
+    - ok allora non puoi aiutarmi
+    - quella era una merda, non stai aiutando
+    - non puoi aiutarmi
+    - Non puoi aiutarmi con ciò di cui ho bisogno
+    - Immagino che tu non possa aiutarmi allora
+    - ok immagino che tu non possa aiutarmi
+    - non è quello che voglio
+    - ok, ma questo non mi aiuta
+    - questo non porta a nulla
+    - questa conversazione non è molto utile
+    - non puoi aiutarmi con quello che voglio
+    - Penso che tu non possa aiutarmi
+    - hm non penso che tu possa fare quello che voglio
+    - fermare
+    - smettila, torna indietro
+    - hai trovato qualcosa?
+    - e ti chiami azienda bot? pff
+    - e questo è tutto?
+    - nient'altro?
+- intent: bot_challenge
+  examples: |
+    - sei un bot?
+    - Sei umano?
+    - sto parlando con un bot?
+    - sto parlando con un umano?
+- intent: ammissioni
+  examples: |
+    - Bandi di ammissione
+    - Iscrizione alle prove di selezione
+    - Voglio registrarmi a una prova di ammisisone
+    - bandi di ammissione
+- intent: topic/laurearsi
+  examples: |
+    - Voglio laurearmi
+    - Desidero laurearmi
+- intent: piano_studi
+  examples: |
+    - Voglio cambiare piano di studi
+    - Desidero cambiare piano di studi
+    - vorrei cambiare piano di studi
+- intent: functionalities
   examples: |
     - Cosa sai fare?
     - Come puoi aiutarmi?
     - Cosa posso chiederti?
-- intent: faq/university_size
-  examples: |
-    - Quanti studenti ci sono in università?
-    - Posso sapere il numero di studenti?
-    - Quante persone frequentano l'univesità?
-- intent: faq/auth_covid
-  examples: |
-    - Come si accede al sistema per la richiesta di Autorizzazione COVID-19? 
-    - Come si accede in Università?
-- intent: faq/zomm_quality
-  examples: |
-    - Che connessione devo avere per tenere un meeting con Zoom di buona qualità?
-    - La mia connessione supporta Zoom?
-- intent: faq/mic_selection
-  examples: |
-    - Posso scegliere il microfono da usare durante il meeting?
-    - Come posso scegliere il microfono per Zoom?
-- intent: faq/zoom_lag
-  examples: |
-    - Quando faccio un meeting con Zoom a volte la mia immagine e l’audio vanno a scatti, come posso fare?
-    - Non vedo bene lo streaming su Zoom
-- intent: faq/zoom_recording
-  examples: |
-    - Vorrei registrare un meeting: quanto spazio occupa un’ora di registrazione nella memoria del mio computer?
-    - Quanto spazio mi serve per registrare un meeting Zoom?
-- intent: faq/zoom_share_screen
-  examples: |
-    - Quando mostro contenuti multimediali tramite la condivisione del mio desktop i/le partecipanti dicono di non sentire l'audio: come mai?
-    - Non riesco a condividere l'audio su Zoom
-- intent: topic/ammissioni
-  examples: |
-    - Bandi di ammissione, Iscrizione alle prove di selezione
-- intent: topic/immatricolazioni
-  examples: |
-    - Domande online, modulistica, documenti e scadenze
+    - cosa sai fare?
 - intent: topic/rinnovo_iscrizioni
   examples: |
-    - Rinnovo con borsa di studio, con pagamento tasse e per studenti con disabilità o bisogni speciali
+    - Vorrei rinnovare l'iscrizione al mio corso di studi
+    - Voglio rinnovare l'iscrizione all'università
 - intent: topic/corsi_singoli
   examples: |
-    - Iscrizione ai corsi singoli standard, corsi singoli per l'accesso alle Lauree magistrali
+    - Vorrei registrarmi ad un corso singolo
+    - Vorrei iscrivermi ad un corso non presente sul piano di studi
+    - Vorrei iscrivermi ad un corso extra
+    - Vorrei iscrivermi ad un corso extracurricolare
 - intent: topic/tasse
   examples: |
-    - Tasse e contributi universitari, pagamenti, rimborsi
+    - Quante tasse devo pagare?
+    - Vorrei sapere dove pagare le tasse
+    - Mi servirebbero informazioni sulle tasse
+    - Tasse anno accademico
 - intent: topic/borse_studio
   examples: |
-    - Borse di studio, esoneri, libera circolazione trasporti pubblici, attesa di laurea
+    - Vorrei accedere alla borsa di studio
+    - Ci sono alloggi disponibili per borse di studio
+    - Come richiedere la borsa di studio
+- intent: topic/supporto-studenti
+  examples: |
+    - Vorrei contattare il supporto studenti
+    - Qual è il numero della segreteria?
+    - Quando è aperta la segreteria?
+    - Supporto studenti del dipartimento
 
-- intent: topic/studiare_e_laurearsi
-  examples: |
-    - Piani di studio, Domanda di laurea, conseguimento titolo
-- intent: topic/trasferirsi_e_cambiare-corso
-  examples: |
-    - Trasferimenti, passaggi di corso.
-- intent: topic/sospensione_e_ripresa_degli_studi
-  examples: |
-    - Sospensione e interruzione temporanea degli studi, rinuncia agli studi, decadenza
-- intent: topic/riconoscimenti_e_abbreviazioni
-  examples: |
-    - Riconoscimento titoli di studio stranieri, Abbreviazione di carriera.
-- intent: topic/documenti_e_attestazioni
-  examples: |
-    - Assistenza sanitaria per studenti non residenti in Trentino, Identità "alias" per persone transgender
-- intent: topic/supporto_studenti
-  examples: |
-    - Supporto studenti

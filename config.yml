@@ -1,25 +1,23 @@
-language: en
+language: it
+
 pipeline:
   - name: WhitespaceTokenizer
-  - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
-  - name: CountVectorsFeaturizer
-    analyzer: "char_wb"
-    min_ngram: 1
-    max_ngram: 4
+    token_pattern: (?u)\b\w+\b
+  - name: DucklingEntityExtractor
+    url: http://localhost:8000
+    dimensions:
+      - number
   - name: DIETClassifier
     epochs: 100
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-  #- name: ResponseSelector
-  #  epochs: 100
-  #  retrieval_intent: faq
-  #- name: ResponseSelector
-  #  epochs: 100
-  #  retrieval_intent: chitchat
+    retrieval_intent: topic
 
 policies:
-  - name: MemoizationPolicy
+  - name: TEDPolicy
+    epochs: 100
+  - name: AugmentedMemoizationPolicy
   - name: RulePolicy

@@ -1,32 +1,88 @@
+version: "2.0"
 rules:
- #- rule: activate subscribe form
- #  steps:
- #  - intent: subscribe
- #  - action: newsletter_form
- #  - active_loop: newsletter_form
+  - rule: Greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
 
- #- rule: submit form
- #  condition:
- #  - active_loop: newsletter_form
- #  steps:
- #  - action: newsletter_form
- #  - active_loop: null
- #  - action: utter_subscribed
-  - rule: welcome user
-    conversation_start: true  # this rule only applies at the beginning of a conversation
+  - rule: Thank you
     steps:
-      - intent: chitchat/functionalities
-      - action: utter_chitchat/functionalities
-  - rule: respond to FAQs
+      - intent: thankyou
+      - action: utter_noworries
+
+  - rule: Bot challenge
     steps:
-    - intent: faq
-    - action: utter_faq
-  - rule: respond to chitchat
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Chitchat
     steps:
-    - intent: chitchat
-    - action: utter_chitchat
-  - rule: activate ammissioni form
+      - intent: chitchat
+      - action: utter_chitchat
+
+  - rule: functionalities
     steps:
-    - intent: topic/ammissioni
-    - action: course_type_form
-    - active_loop: course_type_form
+      - intent: functionalities
+      - action: utter_functionalities
+
+  - rule: topics
+    steps:
+      - intent: topic
+      - action: utter_topic
+      
+  # form --- AMMISSIONI ---
+  - rule: activate course form
+    steps:
+    - intent: ammissioni
+    - action: studies_form
+    - active_loop: studies_form
+
+  - rule: submit course form
+    condition:
+    - active_loop: studies_form
+    steps:
+      - intent: ammissioni
+      - action: studies_form
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: action_admissions
+
+  # form --- CAMBIO PIANO DI STUDI ---
+  - rule: activate studies form
+    steps:
+    - intent: piano_studi
+    - action: studies_form
+    - active_loop: studies_form
+
+  # form --- END INPUT ---
+  - rule: submit studies form
+    condition:
+    - active_loop: studies_form
+    steps:
+      - intent: piano_studi
+      - action: studies_form
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: action_study_plan
+      
+  # action --- PIANO STUDI ---
+  #- rule: change study plan action
+  #  condition:
+  #  - slot_was_set:
+  #    - requested_slot: course
+  #  - slot_was_set:
+  #    - requested_slot: studies
+  #  steps:
+  #  - intent: piano_studi
+  #  - action: action_study_plan
+
+  # action --- AMMISSIONi ---
+  #- rule: admissions action
+  #  condition:
+  #  - slot_was_set:
+  #    - requested_slot: course
+  #  steps:
+  #  - intent: ammissioni
+  #  - action: action_admissions
