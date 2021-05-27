@@ -1,3 +1,4 @@
+# ATTENTION: THIS DOCKERFILE IS ONLY FOR ACTION SERVER
 # Extend the official Rasa SDK image
 FROM rasa/rasa-sdk:2.6.0
 

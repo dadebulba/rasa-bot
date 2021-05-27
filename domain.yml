@@ -115,12 +115,7 @@ actions:
 - validate_studies_form
 forms:
   studies_form:
-    required_slots:
-      course:
-      - type: from_entity
-        entity: course
-      - type: from_text
-      studies:
-      - type: from_entity
-        entity: studies
-      - type: from_text
+    course:
+    - type: from_text
+    studies:
+    - type: from_text
