@@ -1,36 +1,61 @@
 version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- piano_studi
-- topic
-- ammissioni
-- functionalities
+- greet:
+    use_entities: true
+- piano_studi:
+    use_entities: true
+- topic:
+    use_entities: true
+- ammissioni:
+    use_entities: true
+- functionalities:
+    use_entities: true
 - chitchat:
     use_entities: []
-- inform
-- affirm
-- deny
-- stop
-- thankyou
-- bot_challenge
+- inform:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- stop:
+    use_entities: true
+- thankyou:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- ammisisoni:
+    use_entities: true
 entities:
 - course
 - feedback
 - studies
 slots:
   feedback:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
     auto_fill: false
     influence_conversation: false
   studies:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
   course:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
 responses:
   utter_ask_feedback:
   - text: La Marisa sta facendo un buon lavoro?
@@ -75,9 +100,9 @@ responses:
        - Documenti e attestazioni
        - Supporto studenti
   utter_topic/ammissioni_triennale:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico)'
   utter_topic/ammissioni_magistrale:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali](https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali)'
   utter_topic/immatricolazioni_triennale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico'
   utter_topic/immatricolazioni_magistrale:
@@ -87,7 +112,7 @@ responses:
   utter_topic/corsi_singoli:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/iscrizione-corsi-singoli'
   utter_topic/tasse:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/tasse-universitarie'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/tasse-universitarie](https://infostudenti.unitn.it/it/tasse-universitarie)'
   utter_topic/borse_studio:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni'
   utter_topic/laurearsi-laurea-triennale:
@@ -115,7 +140,9 @@ actions:
 - validate_studies_form
 forms:
   studies_form:
-    course:
-    - type: from_text
-    studies:
-    - type: from_text
+    required_slots:
+      course:
+      - type: from_text
+      studies:
+      - type: from_text
+e2e_actions: []
