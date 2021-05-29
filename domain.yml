@@ -104,23 +104,23 @@ responses:
   utter_topic/ammissioni_magistrale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali](https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali)'
   utter_topic/immatricolazioni_triennale:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico)'
   utter_topic/immatricolazioni_magistrale:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-magistrali'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-magistrali](https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-magistrali)'
   utter_topic/rinnovo_iscrizioni:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/rinnovo-iscrizioni'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/rinnovo-iscrizioni](https://infostudenti.unitn.it/it/rinnovo-iscrizioni)'
   utter_topic/corsi_singoli:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/iscrizione-corsi-singoli'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/iscrizione-corsi-singoli](https://infostudenti.unitn.it/it/iscrizione-corsi-singoli)'
   utter_topic/tasse:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/tasse-universitarie](https://infostudenti.unitn.it/it/tasse-universitarie)'
   utter_topic/borse_studio:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni](https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni)'
   utter_topic/laurearsi-laurea-triennale:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali)'
   utter_topic/laurearsi-laurea-magistrale:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico)òòòòòòòòòòòòòòòò'
   utter_topic/supporto-studenti:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: https://infostudenti.unitn.it/it/prenotazione-sportello-studenti'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/prenotazione-sportello-studenti](https://infostudenti.unitn.it/it/prenotazione-sportello-studenti)'
   utter_ask_course:
   - text: Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)
   utter_wrong_course:
