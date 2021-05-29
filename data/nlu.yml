@@ -155,6 +155,7 @@ nlu:
   examples: |
     - Voglio laurearmi
     - Desidero laurearmi
+    - Date di laurea
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi

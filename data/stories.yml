@@ -65,3 +65,39 @@ stories:
     - action: utter_submit
     - action: utter_slots_values
     - action: action_study_plan
+
+- story: laurearsi magistrale
+    steps:
+    - intent: topic/laurearsi
+    - action: studies_form
+    - active_loop: studies_form
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - course: Laurea Magistrale
+    - active_loop: null
+    - action: utter_topic/laurearsi-laurea-magistrale
+
+- story: laurearsi ciclo unico
+    steps:
+    - intent: topic/laurearsi
+    - action: studies_form
+    - active_loop: studies_form
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - course: Laurea a Ciclo Unico
+    - active_loop: null
+    - action: utter_topic/laurearsi-laurea-magistrale
+
+- story: laurearsi triennale
+    steps:
+    - intent: topic/laurearsi
+    - action: studies_form
+    - active_loop: studies_form
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - course: Laurea Triennale
+    - active_loop: null
+    - action: utter_topic/laurearsi-laurea-triennale
