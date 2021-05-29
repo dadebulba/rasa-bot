@@ -27,6 +27,7 @@ nlu:
     - informatica
     - Laurea Magistrale
     - Arte
+    - hello
 - intent: affirm
   examples: |
     - corretto
@@ -182,6 +183,7 @@ nlu:
     - Vorrei sapere dove pagare le tasse
     - Mi servirebbero informazioni sulle tasse
     - Tasse anno accademico
+    - tasse
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -193,4 +195,4 @@ nlu:
     - Qual è il numero della segreteria?
     - Quando è aperta la segreteria?
     - Supporto studenti del dipartimento
-
+    - devo chiamare la segreteria
