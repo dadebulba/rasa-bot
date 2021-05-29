@@ -66,7 +66,7 @@ stories:
     - action: utter_slots_values
     - action: action_study_plan
 
-- story: laurearsi magistrale
+  - story: laurearsi magistrale
     steps:
     - intent: topic/laurearsi
     - action: studies_form
@@ -78,7 +78,7 @@ stories:
     - active_loop: null
     - action: utter_topic/laurearsi-laurea-magistrale
 
-- story: laurearsi ciclo unico
+  - story: laurearsi ciclo unico
     steps:
     - intent: topic/laurearsi
     - action: studies_form
@@ -90,7 +90,7 @@ stories:
     - active_loop: null
     - action: utter_topic/laurearsi-laurea-magistrale
 
-- story: laurearsi triennale
+  - story: laurearsi triennale
     steps:
     - intent: topic/laurearsi
     - action: studies_form
