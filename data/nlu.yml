@@ -28,6 +28,7 @@ nlu:
     - Laurea Magistrale
     - Arte
     - hello
+    - Informatica
 - intent: affirm
   examples: |
     - corretto
@@ -152,11 +153,12 @@ nlu:
     - Iscrizione alle prove di selezione
     - Voglio registrarmi a una prova di ammisisone
     - bandi di ammissione
-- intent: topic/laurearsi
+- intent: laurearsi
   examples: |
     - Voglio laurearmi
     - Desidero laurearmi
     - Date di laurea
+    - vorrei laurearmi
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
@@ -197,3 +199,6 @@ nlu:
     - Quando è aperta la segreteria?
     - Supporto studenti del dipartimento
     - devo chiamare la segreteria
+- intent: topic
+  examples: |
+    - vorrei laurearmi

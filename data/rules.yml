@@ -55,7 +55,6 @@ rules:
     - action: studies_form
     - active_loop: studies_form
 
-  # form --- END INPUT ---
   - rule: submit studies form
     condition:
     - active_loop: studies_form
@@ -66,7 +65,25 @@ rules:
       - action: utter_submit
       - action: utter_slots_values
       - action: action_study_plan
-      
+  
+  # form --- LAUREARSI ----
+  - rule: activate form for degree
+    steps:
+    - intent: laurearsi
+    - action: studies_form
+    - active_loop: studies_form
+
+  - rule: submit form degree
+    condition:
+    - active_loop: studies_form
+    steps:
+      - intent: laurearsi
+      - action: studies_form
+      - active_loop: null
+      - action: utter_submit
+      - action: utter_slots_values
+      - action: action_degree
+
   # action --- PIANO STUDI ---
   #- rule: change study plan action
   #  condition:

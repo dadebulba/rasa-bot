@@ -1,61 +1,41 @@
-version: '2.0'
-config:
-  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet:
-    use_entities: true
-- piano_studi:
-    use_entities: true
 - topic:
-    use_entities: true
-- ammissioni:
-    use_entities: true
-- functionalities:
-    use_entities: true
+    is_retrieval_intent: true
+- laurearsi
+- greet
+- piano_studi
+- ammissioni
+- functionalities
 - chitchat:
     use_entities: []
-- inform:
-    use_entities: true
-- affirm:
-    use_entities: true
-- deny:
-    use_entities: true
-- stop:
-    use_entities: true
-- thankyou:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-- ammisisoni:
-    use_entities: true
+- inform
+- affirm
+- deny
+- stop
+- thankyou
+- bot_challenge
+- ammisisoni
 entities:
 - course
 - feedback
 - studies
 slots:
+  course:
+    type: text
+    influence_conversation: true
   feedback:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
+    type: text
     auto_fill: false
     influence_conversation: false
-  studies:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  course:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
   requested_slot:
-    type: rasa.shared.core.slots.UnfeaturizedSlot
-    initial_value: null
-    auto_fill: true
+    type: unfeaturized
     influence_conversation: false
+  studies:
+    type: text
+    influence_conversation: true
 responses:
   utter_ask_feedback:
   - text: La Marisa sta facendo un buon lavoro?
@@ -63,11 +43,7 @@ responses:
   - text: Grazie!
   - text: Bene!
   utter_slots_values:
-  - text: |-
-      Ecco i parametri inseriti finora:
-       - feedback: {feedback}
-       - course: {course}
-       - studies: {studies}
+  - text: "Ecco i parametri inseriti finora:\n - feedback: {feedback}\n - course: {course}\n - studies: {studies}"
   utter_noworries:
   - text: Prego :)
   utter_chitchat:
@@ -85,20 +61,7 @@ responses:
   utter_restart:
   - text: restarted
   utter_functionalities:
-  - text: |-
-      Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti:
-       - Ammissioni
-       - Immatricolazioni
-       - Rinnovo iscrizioni
-       - Iscrizione a corsi singoli
-       - Tasse universitarie
-       - Borse di studio esoneri e agevolazioni
-       - Studiare e laurearsi
-       - Trasferirsi e cambiare corso
-       - Sospensione e ripresa degli studi
-       - Riconoscimenti e abbreviazioni
-       - Documenti e attestazioni
-       - Supporto studenti
+  - text: "Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti:\n - Ammissioni\n - Immatricolazioni\n - Rinnovo iscrizioni\n - Iscrizione a corsi singoli\n - Tasse universitarie\n - Borse di studio esoneri e agevolazioni\n - Studiare e laurearsi\n - Trasferirsi e cambiare corso\n - Sospensione e ripresa degli studi\n - Riconoscimenti e abbreviazioni\n - Documenti e attestazioni\n - Supporto studenti"
   utter_topic/ammissioni_triennale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico)'
   utter_topic/ammissioni_magistrale:
@@ -115,9 +78,9 @@ responses:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/tasse-universitarie](https://infostudenti.unitn.it/it/tasse-universitarie)'
   utter_topic/borse_studio:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni](https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni)'
-  utter_topic/laurearsi-laurea-triennale:
+  utter_topic/laurearsi_laurea_triennale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali)'
-  utter_topic/laurearsi-laurea-magistrale:
+  utter_topic/laurearsi_laurea_magistrale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico)òòòòòòòòòòòòòòòò'
   utter_topic/supporto-studenti:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/prenotazione-sportello-studenti](https://infostudenti.unitn.it/it/prenotazione-sportello-studenti)'
@@ -131,6 +94,7 @@ responses:
   - text: Corso di studi non presente nell'Università di Trento, prova con un altro corso
 actions:
 - action_admissions
+- action_degree
 - action_study_plan
 - utter_functionalities
 - utter_greet
@@ -140,9 +104,12 @@ actions:
 - validate_studies_form
 forms:
   studies_form:
-    required_slots:
-      course:
-      - type: from_text
-      studies:
-      - type: from_text
-e2e_actions: []
+    course:
+    - type: from_entity
+      entity: course
+    - type: from_text
+    studies:
+    - type: from_entity
+      entity: studies
+    - type: from_text
+version: '2.0'
