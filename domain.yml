@@ -52,7 +52,7 @@ responses:
   utter_ask_continue:
   - text: Vuoi continuare?
   utter_default:
-  - text: Scusa, non ho capito, prova a chiedermi qualcosa d'altro
+  - text: Accidenti! La Marisa non riesce ad aiutarti, prova a contattare la segreteria del tuo dipartimento.
   utter_greet:
   - text: Ciao! Sono Marisa l'assistente agli studenti di UniTN! Come posso aiutarti?
   utter_iamabot:
@@ -104,6 +104,10 @@ responses:
   - text: Per quele tipo di corso di studi sei interessato a ricevere informazioni?
   utter_wrong_studies:
   - text: Corso di studi non presente nell'Università di Trento, prova con un altro corso
+  utter_out_of_scope:
+  - text: Mi dispiace, non posso aiutarti in questo.
+  utter_please_rephrase:
+  - text: Mi dispiace, non credo di aver capito bene. Potresti riformulare la richiesta?
 actions:
 - action_admissions
 - action_study_plan

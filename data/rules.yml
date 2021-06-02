@@ -67,6 +67,17 @@ rules:
       - action: utter_slots_values
       - action: action_study_plan
       
+  # out of scope
+  - rule: out-of-scope
+    steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+
+  # fallback
+  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+    steps:
+    - intent: nlu_fallback
+    - action: utter_please_rephrase
   # action --- PIANO STUDI ---
   #- rule: change study plan action
   #  condition:

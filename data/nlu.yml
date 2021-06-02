@@ -193,4 +193,8 @@ nlu:
     - Qual è il numero della segreteria?
     - Quando è aperta la segreteria?
     - Supporto studenti del dipartimento
-
+- intent: out_of_scope
+  examples: |
+    - Vorrei ordinare una pizza
+    - Quanto fa 2 + 2?
+    - Chi è il Presidente della Repubblica?
