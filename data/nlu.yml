@@ -159,6 +159,8 @@ nlu:
     - Desidero laurearmi
     - Date di laurea
     - vorrei laurearmi
+    - appello di laurea disi
+    - Laurea magistrale
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
@@ -170,6 +172,7 @@ nlu:
     - Come puoi aiutarmi?
     - Cosa posso chiederti?
     - cosa sai fare?
+    - telefono del rettore
 - intent: topic/rinnovo_iscrizioni
   examples: |
     - Vorrei rinnovare l'iscrizione al mio corso di studi
