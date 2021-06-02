@@ -27,6 +27,8 @@ nlu:
     - informatica
     - Laurea Magistrale
     - Arte
+    - hello
+    - Informatica
 - intent: affirm
   examples: |
     - corretto
@@ -151,10 +153,14 @@ nlu:
     - Iscrizione alle prove di selezione
     - Voglio registrarmi a una prova di ammisisone
     - bandi di ammissione
-- intent: topic/laurearsi
+- intent: laurearsi
   examples: |
     - Voglio laurearmi
     - Desidero laurearmi
+    - Date di laurea
+    - vorrei laurearmi
+    - appello di laurea disi
+    - Laurea magistrale
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
@@ -166,6 +172,7 @@ nlu:
     - Come puoi aiutarmi?
     - Cosa posso chiederti?
     - cosa sai fare?
+    - telefono del rettore
 - intent: topic/rinnovo_iscrizioni
   examples: |
     - Vorrei rinnovare l'iscrizione al mio corso di studi
@@ -182,6 +189,7 @@ nlu:
     - Vorrei sapere dove pagare le tasse
     - Mi servirebbero informazioni sulle tasse
     - Tasse anno accademico
+    - tasse
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -193,8 +201,10 @@ nlu:
     - Qual è il numero della segreteria?
     - Quando è aperta la segreteria?
     - Supporto studenti del dipartimento
+    - devo chiamare la segreteria
 - intent: out_of_scope
   examples: |
     - Vorrei ordinare una pizza
     - Quanto fa 2 + 2?
     - Chi è il Presidente della Repubblica?
+

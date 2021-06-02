@@ -93,3 +93,17 @@ class ActionAdmissions(Action):
         else:
             dispatcher.utter_message(response="utter_topic/ammissioni_magistrale")
         return []
+
+class ActionDegree(Action):
+    def name(self):
+        return 'action_degree'
+
+    def run(self, dispatcher, tracker, domain):
+        course = tracker.get_slot("course")
+        logger.debug("Admission action")
+        logger.debug(f"Course: {course}")
+        if db.course_types[0] == course:
+            dispatcher.utter_message(response="utter_topic/laurearsi_laurea_triennale")
+        else:
+            dispatcher.utter_message(response="utter_topic/laurearsi_laurea_magistrale")
+        return []

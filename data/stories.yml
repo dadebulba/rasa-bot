@@ -65,3 +65,43 @@ stories:
     - action: utter_submit
     - action: utter_slots_values
     - action: action_study_plan
+
+  - story: interactive_story_3
+    steps:
+    - intent: laurearsi
+    - action: studies_form
+    - active_loop: studies_form
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - course: Laurea Triennale
+    - slot_was_set:
+      - requested_slot: studies
+    - slot_was_set:
+      - studies: Informatica
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_submit
+    - action: utter_slots_values
+    - action: action_degree
+
+  - story: interactive_story_4
+    steps:
+    - intent: laurearsi
+    - action: studies_form
+    - active_loop: studies_form
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - course: Laurea Magistrale
+    - slot_was_set:
+      - requested_slot: studies
+    - slot_was_set:
+      - studies: Arte
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_submit
+    - action: utter_slots_values
+    - action: action_degree
