@@ -43,7 +43,7 @@ responses:
   - text: Grazie!
   - text: Bene!
   utter_slots_values:
-  - text: "Ecco i parametri inseriti finora:\n - feedback: {feedback}\n - course: {course}\n - studies: {studies}"
+  - text: "Ecco i parametri inseriti finora:\n - course: {course}\n - studies: {studies}"
   utter_noworries:
   - text: Prego :)
   utter_chitchat:
@@ -84,6 +84,14 @@ responses:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico)òòòòòòòòòòòòòòòò'
   utter_topic/supporto-studenti:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/prenotazione-sportello-studenti](https://infostudenti.unitn.it/it/prenotazione-sportello-studenti)'
+  utter_topic/trasferirsi:
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/trasferimento-verso-un-altro-ateneo](https://infostudenti.unitn.it/it/trasferimento-verso-un-altro-ateneo)'
+  utter_topic/esami:
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://dol.unitn.it/esami-distanza](https://dol.unitn.it/esami-distanza)'
+  utter_topic/covid:
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://www.unitn.it/node/89052](https://www.unitn.it/node/89052)'
+  utter_topic/eventi:
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://webmagazine.unitn.it/calendario/ateneo](https://webmagazine.unitn.it/calendario/ateneo)'
   utter_ask_course:
   - text: Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)
   utter_wrong_course:

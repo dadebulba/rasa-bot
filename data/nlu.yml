@@ -211,6 +211,18 @@ nlu:
     - Supporto studenti del dipartimento
     - devo chiamare la segreteria
     - numero segreteria
+- intent: topic/trasferirsi
+  examples: |
+    - Vorrei trasferirmi
+- intent: topic/esami
+  examples: |
+    - Prove d'esame
+- intent: topic/covid
+  examples: |
+    - Norme covid
+- intent: topic/eventi
+  examples: |
+    - Quali sono i prossimi eventi università?
 - intent: out_of_scope
   examples: |
     - Vorrei ordinare una pizza
