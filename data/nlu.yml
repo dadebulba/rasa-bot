@@ -166,6 +166,8 @@ nlu:
     - date di laurea
     - sessioni di laurea
     - richiesta di laurea
+    - quali sono le prossime sessioni di laurea di informatica magistrale?
+    - quali sono le prossime sessioni di laurea ad informatica magistrale?
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
@@ -183,6 +185,7 @@ nlu:
   examples: |
     - Vorrei rinnovare l'iscrizione al mio corso di studi
     - Voglio rinnovare l'iscrizione all'università
+    - quali sono le scadenze per le iscrizioni al prossimo anno accademico?
 - intent: topic/corsi_singoli
   examples: |
     - Vorrei registrarmi ad un corso singolo
@@ -214,15 +217,20 @@ nlu:
 - intent: topic/trasferirsi
   examples: |
     - Vorrei trasferirmi
+    - come trasferirsi in un'altra università
+    - trasferimento università
 - intent: topic/esami
   examples: |
     - Prove d'esame
+    - prove parziali
 - intent: topic/covid
   examples: |
     - Norme covid
+    - norme covid
 - intent: topic/eventi
   examples: |
     - Quali sono i prossimi eventi università?
+    - eventi universitari
 - intent: out_of_scope
   examples: |
     - Vorrei ordinare una pizza
