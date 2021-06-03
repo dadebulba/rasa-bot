@@ -29,6 +29,7 @@ nlu:
     - Arte
     - hello
     - Informatica
+    - Ciao marisa
 - intent: affirm
   examples: |
     - corretto
@@ -201,11 +202,13 @@ nlu:
     - tasse
     - pagamento tasse
     - vorrei informazioni sulle tasse
+    - Quando devo pagare le tasse?
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
     - Ci sono alloggi disponibili per borse di studio
     - Come richiedere la borsa di studio
+    - Quali sono gli alloggi per studenti?
 - intent: topic/supporto-studenti
   examples: |
     - Vorrei contattare il supporto studenti
@@ -214,6 +217,8 @@ nlu:
     - Supporto studenti del dipartimento
     - devo chiamare la segreteria
     - numero segreteria
+    - Dov'è la sede della segreteria?
+    - Che orari fa la segreteria?
 - intent: topic/trasferirsi
   examples: |
     - Vorrei trasferirmi
@@ -223,10 +228,12 @@ nlu:
   examples: |
     - Prove d'esame
     - prove parziali
+    - Gli esami saranno in presenza?
 - intent: topic/covid
   examples: |
     - Norme covid
     - norme covid
+    - Vorrei informazioni sul covid
 - intent: topic/eventi
   examples: |
     - Quali sono i prossimi eventi università?
@@ -242,3 +249,5 @@ nlu:
     - non ho ancora ricevuto il badge universitario
     - fino a che ora rimane aperta l'università
     - voto esami
+    - Mi sapresti dire qualcosa sulla mensa?
+    - Mi daresti l'elenco degli uffici dei prof?
