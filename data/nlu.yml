@@ -153,6 +153,7 @@ nlu:
     - Iscrizione alle prove di selezione
     - Voglio registrarmi a una prova di ammisisone
     - bandi di ammissione
+    - test d'ammissione
 - intent: laurearsi
   examples: |
     - Voglio laurearmi
@@ -161,11 +162,16 @@ nlu:
     - vorrei laurearmi
     - appello di laurea disi
     - Laurea magistrale
+    - laurea triennale
+    - date di laurea
+    - sessioni di laurea
+    - richiesta di laurea
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
     - Desidero cambiare piano di studi
     - vorrei cambiare piano di studi
+    - piano di studi
 - intent: functionalities
   examples: |
     - Cosa sai fare?
@@ -190,6 +196,8 @@ nlu:
     - Mi servirebbero informazioni sulle tasse
     - Tasse anno accademico
     - tasse
+    - pagamento tasse
+    - vorrei informazioni sulle tasse
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -202,9 +210,15 @@ nlu:
     - Quando è aperta la segreteria?
     - Supporto studenti del dipartimento
     - devo chiamare la segreteria
+    - numero segreteria
 - intent: out_of_scope
   examples: |
     - Vorrei ordinare una pizza
     - Quanto fa 2 + 2?
     - Chi è il Presidente della Repubblica?
-
+    - Quanto fa 2 +2 ?
+    - gli esami scritti sono in presenza?
+    - gli esami orali si fanno in presenza?
+    - non ho ancora ricevuto il badge universitario
+    - fino a che ora rimane aperta l'università
+    - voto esami
