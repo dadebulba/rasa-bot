@@ -182,6 +182,7 @@ nlu:
     - Cosa posso chiederti?
     - cosa sai fare?
     - telefono del rettore
+    - Che cosa puoi fare?
 - intent: topic/rinnovo_iscrizioni
   examples: |
     - Vorrei rinnovare l'iscrizione al mio corso di studi
@@ -203,6 +204,7 @@ nlu:
     - pagamento tasse
     - vorrei informazioni sulle tasse
     - Quando devo pagare le tasse?
+    - Soldi
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -251,3 +253,4 @@ nlu:
     - voto esami
     - Mi sapresti dire qualcosa sulla mensa?
     - Mi daresti l'elenco degli uffici dei prof?
+    - Chi sono?
