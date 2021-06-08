@@ -165,12 +165,14 @@ nlu:
     - richiesta di laurea
     - quali sono le prossime sessioni di laurea di informatica magistrale?
     - quali sono le prossime sessioni di laurea ad informatica magistrale?
+    - Quali sono gli appelli di laurea per quest'anno?
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
     - Desidero cambiare piano di studi
     - vorrei cambiare piano di studi
     - piano di studi
+    - Voglio inserire un corso al mio piano di studi
 - intent: functionalities
   examples: |
     - Cosa sai fare?
@@ -207,6 +209,9 @@ nlu:
     - Ci sono alloggi disponibili per borse di studio
     - Come richiedere la borsa di studio
     - Quali sono gli alloggi per studenti?
+    - Borsa di studi
+    - Borse di studio
+    - Borsa di studio
 - intent: topic/supporto-studenti
   examples: |
     - Vorrei contattare il supporto studenti
@@ -234,6 +239,7 @@ nlu:
     - Vorrei informazioni sul covid
     - gli esami scritti sono in presenza?
     - gli esami orali si fanno in presenza?
+    - vorrei informazioni sul covid
 - intent: topic/eventi
   examples: |
     - Quali sono i prossimi eventi università?
