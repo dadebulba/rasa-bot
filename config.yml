@@ -16,7 +16,7 @@ pipeline:
     epochs: 100
     retrieval_intent: topic
   - name: FallbackClassifier
-    threshold: 0.7
+    threshold: 0.5
 
 policies:
   - name: TEDPolicy
