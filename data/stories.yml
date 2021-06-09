@@ -2,7 +2,7 @@ version: "2.0"
 stories:
   - story: require admission info
     steps:
-      - intent: ammisisoni
+      - intent: ammissioni
       - action: studies_form
       - active_loop: null
       - action: utter_submit
@@ -17,14 +17,6 @@ stories:
       - action: utter_submit
       - action: utter_slots_values
       - action: action_study_plan
-
-  - story: admission info
-    steps:
-      - intent: ammisisoni
-      - action: utter_slots_values
-      - slot_was_set:
-        - requested_slot: course
-      - action: action_admissions
 
   - story: interactive_story_1
     steps:

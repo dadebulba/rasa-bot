@@ -74,11 +74,11 @@ class ActionStudyPlan(Action):
         if "Laurea Triennale" == course:
             for el in db.study_plan_triennali:
                 if studies in el[0]: 
-                    dispatcher.utter_message("Prova a vedere se qui ci sono le informazioni che stai cercando: " + el[1])
+                    dispatcher.utter_message(f"Prova a vedere se qui ci sono le informazioni che stai cercando: [{el[1]}]({el[1]})")
         else:
             for el in db.study_plan_magistrali:
                 if studies in el[0]: 
-                    dispatcher.utter_message("Prova a vedere se qui ci sono le informazioni che stai cercando: " + el[1])
+                    dispatcher.utter_message(f"Prova a vedere se qui ci sono le informazioni che stai cercando: [{el[1]}]({el[1]})")
         return []
 class ActionAdmissions(Action):
     def name(self):

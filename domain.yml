@@ -17,7 +17,6 @@ intents:
 - stop
 - thankyou
 - bot_challenge
-- ammisisoni
 entities:
 - course
 - feedback
@@ -76,12 +75,14 @@ responses:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/iscrizione-corsi-singoli](https://infostudenti.unitn.it/it/iscrizione-corsi-singoli)'
   utter_topic/tasse:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/tasse-universitarie](https://infostudenti.unitn.it/it/tasse-universitarie)'
+  utter_topic/tasse_rimborso:
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/rimborso-tasse-universitarie](https://infostudenti.unitn.it/it/rimborso-tasse-universitarie)'
   utter_topic/borse_studio:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni](https://infostudenti.unitn.it/it/borse-di-studio-esoneri-e-agevolazioni)'
   utter_topic/laurearsi_laurea_triennale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-triennali)'
   utter_topic/laurearsi_laurea_magistrale:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico)òòòòòòòòòòòòòòòò'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico)'
   utter_topic/supporto-studenti:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/prenotazione-sportello-studenti](https://infostudenti.unitn.it/it/prenotazione-sportello-studenti)'
   utter_topic/trasferirsi:
@@ -92,6 +93,10 @@ responses:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://www.unitn.it/node/89052](https://www.unitn.it/node/89052)'
   utter_topic/eventi:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://webmagazine.unitn.it/calendario/ateneo](https://webmagazine.unitn.it/calendario/ateneo)'
+  utter_topic/attesa_laurea:
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/richiesta-attesa-di-laurea-20-21](https://infostudenti.unitn.it/it/richiesta-attesa-di-laurea-20-21)'
+  utter_topic/sospensione_ripresa:
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/sospensione-e-ripresa-degli-studi](https://infostudenti.unitn.it/it/sospensione-e-ripresa-degli-studi)'
   utter_ask_course:
   - text: Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)
   utter_wrong_course:

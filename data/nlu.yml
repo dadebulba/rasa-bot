@@ -159,6 +159,7 @@ nlu:
     - dove posso trovare i bandi di ammissione?
     - Come posso iscrivermi LM Matematica
     - test ingresso Informatica
+    - quando saranno le date del test d'ingresso?
 - intent: laurearsi
   examples: |
     - Voglio laurearmi
@@ -298,6 +299,3 @@ nlu:
     - dove trovo informazioni sulla decadenza?
     - non so se sto decandendo
     - quando la mia carriera incorre nella decadenza?
-- intent: ammisisoni
-  examples: |
-    - quando saranno le date del test d'ingresso per accedere al corso di laurea in Informatica?
