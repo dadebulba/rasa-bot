@@ -37,6 +37,7 @@ nlu:
     - giusto
     - sì giusto
     - adoro
+    - bravo :)
 - intent: deny
   examples: |
     - no
@@ -46,6 +47,9 @@ nlu:
     - ehm no
     - hai qualcos'altro
     - no questo non funziona per me
+    - non ci sono
+    - non è corretto
+    - non è corretto, puoi riprovare?
 - intent: inform
   examples: |
     - il mio feedback è [buono](feedback)
@@ -151,6 +155,10 @@ nlu:
     - Voglio registrarmi a una prova di ammisisone
     - bandi di ammissione
     - test d'ammissione
+    - quali sono i requisiti di accesso alla magistrale di fisica?
+    - dove posso trovare i bandi di ammissione?
+    - Come posso iscrivermi LM Matematica
+    - test ingresso Informatica
 - intent: laurearsi
   examples: |
     - Voglio laurearmi
@@ -166,6 +174,11 @@ nlu:
     - quali sono le prossime sessioni di laurea di informatica magistrale?
     - quali sono le prossime sessioni di laurea ad informatica magistrale?
     - Quali sono gli appelli di laurea per quest'anno?
+    - Devo iscrivermi all'appello di Laurea
+    - quando sono le sessioni di laurea per meccatronica?
+    - cosa faccio per laurearmi?
+    - laurearsi
+    - cosa devo fare per laurearmi?
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
@@ -173,6 +186,13 @@ nlu:
     - vorrei cambiare piano di studi
     - piano di studi
     - Voglio inserire un corso al mio piano di studi
+    - vorrei aggiungere un corso al piano di studi
+    - come posso compilare il piano di studi?
+    - quando posso presentare richiesta di modifica piano di studi?
+    - vorrei modificare il piano di studio
+    - Come posso modificare il piano di studio?
+    - Non riesco a modificare il piano di studio, come mai?
+    - Devo compilare il mip piano di studi, come posso fare?
 - intent: functionalities
   examples: |
     - Cosa sai fare?
@@ -203,6 +223,8 @@ nlu:
     - vorrei informazioni sulle tasse
     - Quando devo pagare le tasse?
     - Soldi
+    - rimborso tasse
+    - Esonero tasse
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -212,6 +234,10 @@ nlu:
     - Borsa di studi
     - Borse di studio
     - Borsa di studio
+    - Voglio fare domande di Borsa di studio
+    - sai dirmi qualcosa circa le borse di studio?
+    - Quali sono i requisiti per presentare richiesta in attesa di laurea?
+    - Quali sono i requisiti per presentare richiesta di attesa di laurea?
 - intent: topic/supporto-studenti
   examples: |
     - Vorrei contattare il supporto studenti
@@ -256,3 +282,22 @@ nlu:
     - Mi sapresti dire qualcosa sulla mensa?
     - Mi daresti l'elenco degli uffici dei prof?
     - Chi sono?
+    - possiamo cambiare la lavatrice?
+    - Posso non pagare 2 mesi di affitto?
+- intent: topic/tasse_rimborso
+  examples: |
+    - Ho pagato delle tasse non dovute
+- intent: topic/attesa_laurea
+  examples: |
+    - a cosa serve l'attesa di laurea?
+    - quando posso fare l'attesa di laurea?
+    - attesa di laurea
+    - vorrei presentare la domanda di attesa di laurea
+- intent: topic/sospensione_ripresa
+  examples: |
+    - dove trovo informazioni sulla decadenza?
+    - non so se sto decandendo
+    - quando la mia carriera incorre nella decadenza?
+- intent: ammisisoni
+  examples: |
+    - quando saranno le date del test d'ingresso per accedere al corso di laurea in Informatica?
