@@ -207,6 +207,9 @@ nlu:
     - Vorrei rinnovare l'iscrizione al mio corso di studi
     - Voglio rinnovare l'iscrizione all'università
     - quali sono le scadenze per le iscrizioni al prossimo anno accademico?
+- intent: topic/ammissioni_anni_successivi
+  examples: |
+    - Ammissioni ad anni successivi al primo
 - intent: topic/corsi_singoli
   examples: |
     - Vorrei registrarmi ad un corso singolo
@@ -220,12 +223,15 @@ nlu:
     - Mi servirebbero informazioni sulle tasse
     - Tasse anno accademico
     - tasse
-    - pagamento tasse
     - vorrei informazioni sulle tasse
     - Quando devo pagare le tasse?
     - Soldi
     - rimborso tasse
     - Esonero tasse
+- intent: topic/pagamenti
+  examples: |
+    - pagamento tasse
+    - Non vedo le tasse da pagare su esse3
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -299,3 +305,10 @@ nlu:
     - dove trovo informazioni sulla decadenza?
     - non so se sto decandendo
     - quando la mia carriera incorre nella decadenza?
+- intent: faq/esame_voto
+  examples: |
+    - Non ho il voto a libretto di un esame
+- intent: faq/esame_esse3
+  examples: |
+    - Non riesco ad iscrivermi ad un esame su esse3
+    - Non vedo un esame su esse3
