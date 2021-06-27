@@ -50,6 +50,7 @@ nlu:
     - non ci sono
     - non è corretto
     - non è corretto, puoi riprovare?
+    - non corretto
 - intent: inform
   examples: |
     - il mio feedback è [buono](feedback)
@@ -160,6 +161,9 @@ nlu:
     - Come posso iscrivermi LM Matematica
     - test ingresso Informatica
     - quando saranno le date del test d'ingresso?
+    - test ingresso date
+    - quali sono i requisiti di accesso alla magistrale di fisica
+    - quando saranno le date del test d'ingresso per accedere al corso di laurea in Informatica?
 - intent: laurearsi
   examples: |
     - Voglio laurearmi
@@ -194,6 +198,8 @@ nlu:
     - Come posso modificare il piano di studio?
     - Non riesco a modificare il piano di studio, come mai?
     - Devo compilare il mip piano di studi, come posso fare?
+    - VOGLIO CAMBIARE PIANO DI STUDI
+    - COME POSSO FARE IL PIANO DI STUDI?
 - intent: functionalities
   examples: |
     - Cosa sai fare?
@@ -210,6 +216,8 @@ nlu:
 - intent: topic/ammissioni_anni_successivi
   examples: |
     - Ammissioni ad anni successivi al primo
+    - ammissioni ad anni successivi al primo
+    - come posso essere ammesso al 2° anno della triennale in matematica?
 - intent: topic/corsi_singoli
   examples: |
     - Vorrei registrarmi ad un corso singolo
@@ -232,6 +240,7 @@ nlu:
   examples: |
     - pagamento tasse
     - Non vedo le tasse da pagare su esse3
+    - Non vedo le tasse da pagare in esse3, come mai?
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -305,10 +314,13 @@ nlu:
     - dove trovo informazioni sulla decadenza?
     - non so se sto decandendo
     - quando la mia carriera incorre nella decadenza?
+    - non so se sto decandend
 - intent: faq/esame_voto
   examples: |
     - Non ho il voto a libretto di un esame
+    - Come mai non è stato verbalizzato il voto dell'esame Algebra 1?
 - intent: faq/esame_esse3
   examples: |
     - Non riesco ad iscrivermi ad un esame su esse3
     - Non vedo un esame su esse3
+    - Non riesco a iscrivermi agli appelli d'esame, come mai?
