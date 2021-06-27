@@ -1,2 +1,4 @@
 __pycache__/
 story_graph.dot
+models/
+.vscode/
