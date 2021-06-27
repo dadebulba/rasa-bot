@@ -62,6 +62,10 @@ responses:
   - text: restarted
   utter_functionalities:
   - text: "Il mio compito è aiutarti! Attualmente posso rispondere a domande inerenti:\n - Ammissioni\n - Immatricolazioni\n - Rinnovo iscrizioni\n - Iscrizione a corsi singoli\n - Tasse universitarie\n - Borse di studio esoneri e agevolazioni\n - Studiare e laurearsi\n - Trasferirsi e cambiare corso\n - Sospensione e ripresa degli studi\n - Riconoscimenti e abbreviazioni\n - Documenti e attestazioni\n - Supporto studenti"
+  utter_deny:
+  - text: "Mi dispiace, verificherò cosa è andato storto per fornire una risposta adeguata la prossima volta"
+  utter_affirm:
+  - text: "Evviva, è un piacere aiutarti!"
   utter_topic/ammissioni_triennale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico)'
   utter_topic/ammissioni_magistrale:

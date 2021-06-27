@@ -10,6 +10,16 @@ rules:
       - intent: thankyou
       - action: utter_noworries
 
+  - rule: Done right
+    steps:
+      - intent: affirm
+      - action: utter_affirm
+
+  - rule: Done wrong
+    steps:
+      - intent: deny
+      - action: utter_deny
+
   - rule: Bot challenge
     steps:
       - intent: bot_challenge
