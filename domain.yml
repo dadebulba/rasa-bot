@@ -2,16 +2,14 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- topic:
-    is_retrieval_intent: true
+- topic
 - faq
 - laurearsi
 - greet
 - piano_studi
 - ammissioni
 - functionalities
-- chitchat:
-    use_entities: []
+- chitchat
 - inform
 - affirm
 - deny
