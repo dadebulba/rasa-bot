@@ -27,7 +27,7 @@ class ValidateStudiesForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate cuisine value."""
         logger.debug("Studies form - course validation")
-        best_match = difflib.get_close_matches(slot_value.lower(),db.course_types,1, cutoff=0.5)
+        best_match = difflib.get_close_matches(slot_value,db.course_types,1, cutoff=0.5)
         logger.debug(best_match)
         if len(best_match) > 0:
             return {"course": best_match[0]}
@@ -49,10 +49,10 @@ class ValidateStudiesForm(FormValidationAction):
         course = tracker.get_slot("course")
         best_match = None
         if course == db.course_types[0]:
-            best_match = difflib.get_close_matches(slot_value.lower(),[el[0] for el in db.lauree_triennali],1, cutoff=0.5)
+            best_match = difflib.get_close_matches(slot_value,[el[0] for el in db.lauree_triennali],1, cutoff=0.5)
         else:
             lauree = db.lauree_magistrali + db.lauree_ciclo_unico
-            best_match = difflib.get_close_matches(slot_value.lower(),[el[0] for el in lauree],1, cutoff=0.5)
+            best_match = difflib.get_close_matches(slot_value,[el[0] for el in lauree],1, cutoff=0.5)
 
         logger.debug(best_match)
         if len(best_match) > 0:

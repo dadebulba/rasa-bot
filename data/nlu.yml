@@ -213,11 +213,11 @@ nlu:
     - Vorrei rinnovare l'iscrizione al mio corso di studi
     - Voglio rinnovare l'iscrizione all'università
     - quali sono le scadenze per le iscrizioni al prossimo anno accademico?
-- intent: topic/ammissioni_anni_successivi
-  examples: |
-    - Ammissioni ad anni successivi al primo
-    - ammissioni ad anni successivi al primo
-    - come posso essere ammesso al 2° anno della triennale in matematica?
+#- intent: topic/ammissioni_anni_successivi
+#  examples: |
+#    - Ammissioni ad anni successivi al primo
+#    - ammissioni ad anni successivi al primo
+#    - come posso essere ammesso al 2° anno della triennale in matematica?
 - intent: topic/corsi_singoli
   examples: |
     - Vorrei registrarmi ad un corso singolo
@@ -231,16 +231,17 @@ nlu:
     - Mi servirebbero informazioni sulle tasse
     - Tasse anno accademico
     - tasse
+    - pagamento tasse
     - vorrei informazioni sulle tasse
     - Quando devo pagare le tasse?
     - Soldi
     - rimborso tasse
     - Esonero tasse
-- intent: topic/pagamenti
-  examples: |
-    - pagamento tasse
-    - Non vedo le tasse da pagare su esse3
-    - Non vedo le tasse da pagare in esse3, come mai?
+#- intent: topic/pagamenti
+#  examples: |
+#    - pagamento tasse
+#    - Non vedo le tasse da pagare su esse3
+#    - Non vedo le tasse da pagare in esse3, come mai?
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -314,13 +315,13 @@ nlu:
     - dove trovo informazioni sulla decadenza?
     - non so se sto decandendo
     - quando la mia carriera incorre nella decadenza?
-    - non so se sto decandend
-- intent: faq/esame_voto
-  examples: |
-    - Non ho il voto a libretto di un esame
-    - Come mai non è stato verbalizzato il voto dell'esame Algebra 1?
-- intent: faq/esame_esse3
-  examples: |
-    - Non riesco ad iscrivermi ad un esame su esse3
-    - Non vedo un esame su esse3
-    - Non riesco a iscrivermi agli appelli d'esame, come mai?
+    - non so se sto decandendo
+#- intent: faq/esame_voto
+#  examples: |
+#    - Non ho il voto a libretto di un esame
+#    - Come mai non è stato verbalizzato il voto dell'esame Algebra 1?
+#- intent: faq/esame_esse3
+#  examples: |
+#    - Non riesco ad iscrivermi ad un esame su esse3
+#    - Non vedo un esame su esse3
+#    - Non riesco a iscrivermi agli appelli d'esame, come mai?

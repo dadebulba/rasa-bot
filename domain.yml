@@ -68,8 +68,6 @@ responses:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico)'
   utter_topic/ammissioni_magistrale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali](https://infostudenti.unitn.it/it/ammissioni/ammissione-alle-lauree-magistrali)'
-  utter_topic/ammissioni_anni_successivi:
-  - text: 'Vai alla pagina [https://infostudenti.unitn.it/it/trasferirsi-e-cambiare-corso](https://infostudenti.unitn.it/it/trasferirsi-e-cambiare-corso) e seleziona il corso che ti interessa'
   utter_topic/immatricolazioni_triennale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/immatricolazioni/immatricolazione-alle-lauree-triennali-e-lauree-magistrali-a-ciclo-unico)'
   utter_topic/immatricolazioni_magistrale:
@@ -80,8 +78,6 @@ responses:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/iscrizione-corsi-singoli](https://infostudenti.unitn.it/it/iscrizione-corsi-singoli)'
   utter_topic/tasse:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/tasse-universitarie](https://infostudenti.unitn.it/it/tasse-universitarie)'
-  utter_topic/pagamenti:
-  - text: 'Verifica le modalità di pagamento alla pagina: [https://infostudenti.unitn.it/it/pagamenti](https://infostudenti.unitn.it/it/pagamenti). Se avessi bisogno di supporto per le tasse puoi contattare: [helptassestudenti@unitn.it](mailto:helptassestudenti@unitn.it)'
   utter_topic/tasse_rimborso:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/rimborso-tasse-universitarie](https://infostudenti.unitn.it/it/rimborso-tasse-universitarie)'
   utter_topic/borse_studio:
@@ -91,7 +87,7 @@ responses:
   utter_topic/laurearsi_laurea_magistrale:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico](https://infostudenti.unitn.it/it/studiare-e-laurearsi/domanda-di-laurea-per-lauree-magistrali-e-lauree-magistrali-a-ciclo-unico)'
   utter_topic/supporto-studenti:
-  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://www.unitn.it/servizi/1238/segreterie-studenti](https://www.unitn.it/servizi/1238/segreterie-studenti)'
+  - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/prenotazione-sportello-studenti](https://infostudenti.unitn.it/it/prenotazione-sportello-studenti)'
   utter_topic/trasferirsi:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/trasferimento-verso-un-altro-ateneo](https://infostudenti.unitn.it/it/trasferimento-verso-un-altro-ateneo)'
   utter_topic/esami:
@@ -104,10 +100,6 @@ responses:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/richiesta-attesa-di-laurea-20-21](https://infostudenti.unitn.it/it/richiesta-attesa-di-laurea-20-21)'
   utter_topic/sospensione_ripresa:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/sospensione-e-ripresa-degli-studi](https://infostudenti.unitn.it/it/sospensione-e-ripresa-degli-studi)'
-  utter_faq/esame_voto:
-  - text:  "La verbalizzazione del voto può essere bloccata per i seguenti motivi: irregolarità nelle tasse, mancato rispetto delle propedeuticità, mancata iscrizione all'appello, il docente non ha chiuso l'appello. Verifica col docente se ha chiuso l'appello, oppure se sei in regola con le tasse o con le propedeuticità. In caso di dubbi contatta il Supporto Studenti [https://www.unitn.it/servizi/1238/segreterie-studenti](https://www.unitn.it/servizi/1238/segreterie-studenti)"
-  utter_faq/esame_esse3:
-  - text: "è possibile che tu non abbia l'attività inserita a libretto oppure che le date di esame non siano ancora disponibil. In caso di dubbi contatta il supporto studenti:  In caso di dubbi contatta il Supporto Studenti [https://www.unitn.it/servizi/1238/segreterie-studenti](https://www.unitn.it/servizi/1238/segreterie-studenti) "
   utter_ask_course:
   - text: Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)
   utter_wrong_course:
@@ -129,7 +121,6 @@ actions:
 - utter_slots_values
 - utter_submit
 - utter_topic
-- utter_faq
 - validate_studies_form
 forms:
   studies_form:
