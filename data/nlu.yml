@@ -38,6 +38,7 @@ nlu:
     - sì giusto
     - adoro
     - bravo :)
+    - pergamena
 - intent: deny
   examples: |
     - no
@@ -122,6 +123,7 @@ nlu:
     - Bella giornata, vero?
     - Quali sono le previsioni del tempo?
     - È abbastanza ventilato fuori?
+    - come va?
 - intent: stop
   examples: |
     - ok allora non puoi aiutarmi
@@ -164,6 +166,12 @@ nlu:
     - test ingresso date
     - quali sono i requisiti di accesso alla magistrale di fisica
     - quando saranno le date del test d'ingresso per accedere al corso di laurea in Informatica?
+    - vorrei informazioni sulle prove di ammissione
+    - quando si terrà il test d'ingresso?
+    - vorrei immatricolarmi
+    - immatricolazioni
+    - ammissioni
+    - vorrei iscrivermi
 - intent: laurearsi
   examples: |
     - Voglio laurearmi
@@ -184,6 +192,7 @@ nlu:
     - cosa faccio per laurearmi?
     - laurearsi
     - cosa devo fare per laurearmi?
+    - vorrei informazioni sulle lauree
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
@@ -200,6 +209,7 @@ nlu:
     - Devo compilare il mip piano di studi, come posso fare?
     - VOGLIO CAMBIARE PIANO DI STUDI
     - COME POSSO FARE IL PIANO DI STUDI?
+    - piano di studio
 - intent: functionalities
   examples: |
     - Cosa sai fare?
@@ -213,11 +223,6 @@ nlu:
     - Vorrei rinnovare l'iscrizione al mio corso di studi
     - Voglio rinnovare l'iscrizione all'università
     - quali sono le scadenze per le iscrizioni al prossimo anno accademico?
-#- intent: topic/ammissioni_anni_successivi
-#  examples: |
-#    - Ammissioni ad anni successivi al primo
-#    - ammissioni ad anni successivi al primo
-#    - come posso essere ammesso al 2° anno della triennale in matematica?
 - intent: topic/corsi_singoli
   examples: |
     - Vorrei registrarmi ad un corso singolo
@@ -237,11 +242,8 @@ nlu:
     - Soldi
     - rimborso tasse
     - Esonero tasse
-#- intent: topic/pagamenti
-#  examples: |
-#    - pagamento tasse
-#    - Non vedo le tasse da pagare su esse3
-#    - Non vedo le tasse da pagare in esse3, come mai?
+    - tasse isee
+    - isee
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
@@ -255,6 +257,8 @@ nlu:
     - sai dirmi qualcosa circa le borse di studio?
     - Quali sono i requisiti per presentare richiesta in attesa di laurea?
     - Quali sono i requisiti per presentare richiesta di attesa di laurea?
+    - alloggio
+    - libera circolazione
 - intent: topic/supporto-studenti
   examples: |
     - Vorrei contattare il supporto studenti
@@ -315,13 +319,5 @@ nlu:
     - dove trovo informazioni sulla decadenza?
     - non so se sto decandendo
     - quando la mia carriera incorre nella decadenza?
-    - non so se sto decandendo
-#- intent: faq/esame_voto
-#  examples: |
-#    - Non ho il voto a libretto di un esame
-#    - Come mai non è stato verbalizzato il voto dell'esame Algebra 1?
-#- intent: faq/esame_esse3
-#  examples: |
-#    - Non riesco ad iscrivermi ad un esame su esse3
-#    - Non vedo un esame su esse3
-#    - Non riesco a iscrivermi agli appelli d'esame, come mai?
+    - come faccio a sapere se decado?
+    - non so se sto decadendo
