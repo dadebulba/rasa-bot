@@ -38,7 +38,6 @@ nlu:
     - sì giusto
     - adoro
     - bravo :)
-    - pergamena
 - intent: deny
   examples: |
     - no
@@ -255,8 +254,6 @@ nlu:
     - Borsa di studio
     - Voglio fare domande di Borsa di studio
     - sai dirmi qualcosa circa le borse di studio?
-    - Quali sono i requisiti per presentare richiesta in attesa di laurea?
-    - Quali sono i requisiti per presentare richiesta di attesa di laurea?
     - alloggio
     - libera circolazione
 - intent: topic/supporto-studenti
@@ -314,6 +311,7 @@ nlu:
     - quando posso fare l'attesa di laurea?
     - attesa di laurea
     - vorrei presentare la domanda di attesa di laurea
+    - Quali sono i requisiti per presentare richiesta in attesa di laurea?
 - intent: topic/sospensione_ripresa
   examples: |
     - dove trovo informazioni sulla decadenza?

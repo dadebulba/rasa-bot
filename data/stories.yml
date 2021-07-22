@@ -97,3 +97,40 @@ stories:
     - action: utter_submit
     - action: utter_slots_values
     - action: action_degree
+
+
+  - story: Story from Conversation ID 12889ebd8872428a8a877687ef865f79
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: functionalities
+    - action: utter_functionalities
+    - intent: topic/tasse
+    - action: utter_topic
+    - intent: topic/sospensione_ripresa
+    - action: utter_topic
+
+
+  - story: Story from Conversation ID 84663ed1d5d14452a75e50bd786d7e2a
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: topic/esami
+    - action: utter_topic
+    - intent: ammissioni
+    - action: studies_form
+    - active_loop: studies_form
+    - slot_was_set:
+      - requested_slot: course
+    - slot_was_set:
+      - course: Laurea Triennale
+    - slot_was_set:
+      - requested_slot: studies
+    - slot_was_set:
+      - studies: Lingue moderne
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_submit
+    - action: utter_slots_values
+    - action: action_admissions
