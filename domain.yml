@@ -105,6 +105,8 @@ responses:
   - text:  "La verbalizzazione del voto può essere bloccata per i seguenti motivi: irregolarità nelle tasse, mancato rispetto delle propedeuticità, mancata iscrizione all'appello, il docente non ha chiuso l'appello. Verifica col docente se ha chiuso l'appello, oppure se sei in regola con le tasse o con le propedeuticità. In caso di dubbi contatta il Supporto Studenti [https://www.unitn.it/servizi/1238/segreterie-studenti](https://www.unitn.it/servizi/1238/segreterie-studenti)"
   utter_topic/esame_esse3:
   - text: "è possibile che tu non abbia l'attività inserita a libretto oppure che le date di esame non siano ancora disponibil. In caso di dubbi contatta il supporto studenti:  In caso di dubbi contatta il Supporto Studenti [https://www.unitn.it/servizi/1238/segreterie-studenti](https://www.unitn.it/servizi/1238/segreterie-studenti) "
+  utter_topic/pagamenti:
+  - text: 'Verifica le modalità di pagamento alla pagina: [https://infostudenti.unitn.it/it/pagamenti](https://infostudenti.unitn.it/it/pagamenti). Se avessi bisogno di supporto per le tasse puoi contattare: [helptassestudenti@unitn.it](mailto:helptassestudenti@unitn.it)'
   utter_ask_course:
   - text: Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)
   utter_wrong_course:

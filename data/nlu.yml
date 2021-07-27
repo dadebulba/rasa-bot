@@ -332,3 +332,8 @@ nlu:
     - Non riesco ad iscrivermi ad un esame su esse3
     - Non vedo un esame su esse3
     - Non riesco a iscrivermi agli appelli d'esame, come mai?
+- intent: topic/pagamenti
+  examples: |
+    - pagamento tasse
+    - Non vedo le tasse da pagare su esse3
+    - Non vedo le tasse da pagare in esse3, come mai?
