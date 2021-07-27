@@ -318,4 +318,17 @@ nlu:
     - non so se sto decandendo
     - quando la mia carriera incorre nella decadenza?
     - come faccio a sapere se decado?
-    - non so se sto decadendo
+- intent: topic/ammissioni_anni_successivi
+  examples: |
+    - Ammissioni ad anni successivi al primo
+    - ammissioni ad anni successivi al primo
+    - come posso essere ammesso al 2° anno della triennale in matematica?
+- intent: topic/esame_voto
+  examples: |
+    - Non ho il voto a libretto di un esame
+    - Come mai non è stato verbalizzato il voto dell'esame Algebra 1?
+- intent: topic/esame_esse3
+  examples: |
+    - Non riesco ad iscrivermi ad un esame su esse3
+    - Non vedo un esame su esse3
+    - Non riesco a iscrivermi agli appelli d'esame, come mai?

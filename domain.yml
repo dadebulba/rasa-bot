@@ -99,6 +99,12 @@ responses:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/richiesta-attesa-di-laurea-20-21](https://infostudenti.unitn.it/it/richiesta-attesa-di-laurea-20-21)'
   utter_topic/sospensione_ripresa:
   - text: 'Prova a vedere se qui ci sono le informazioni che stai cercando: [https://infostudenti.unitn.it/it/sospensione-e-ripresa-degli-studi](https://infostudenti.unitn.it/it/sospensione-e-ripresa-degli-studi)'
+  utter_topic/ammissioni_anni_successivi:
+  - text: 'Vai alla pagina [https://infostudenti.unitn.it/it/trasferirsi-e-cambiare-corso](https://infostudenti.unitn.it/it/trasferirsi-e-cambiare-corso) e seleziona il corso che ti interessa'
+  utter_topic/esame_voto:
+  - text:  "La verbalizzazione del voto può essere bloccata per i seguenti motivi: irregolarità nelle tasse, mancato rispetto delle propedeuticità, mancata iscrizione all'appello, il docente non ha chiuso l'appello. Verifica col docente se ha chiuso l'appello, oppure se sei in regola con le tasse o con le propedeuticità. In caso di dubbi contatta il Supporto Studenti [https://www.unitn.it/servizi/1238/segreterie-studenti](https://www.unitn.it/servizi/1238/segreterie-studenti)"
+  utter_topic/esame_esse3:
+  - text: "è possibile che tu non abbia l'attività inserita a libretto oppure che le date di esame non siano ancora disponibil. In caso di dubbi contatta il supporto studenti:  In caso di dubbi contatta il Supporto Studenti [https://www.unitn.it/servizi/1238/segreterie-studenti](https://www.unitn.it/servizi/1238/segreterie-studenti) "
   utter_ask_course:
   - text: Per quale tipo di laurea sei interessato a ricevere informazioni? (Laurea Triennale, Magistrale o a ciclo unico)
   utter_wrong_course:
