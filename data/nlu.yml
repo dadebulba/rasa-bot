@@ -192,6 +192,7 @@ nlu:
     - laurearsi
     - cosa devo fare per laurearmi?
     - vorrei informazioni sulle lauree
+    - vorrei informazioni sulla laurea
 - intent: piano_studi
   examples: |
     - Voglio cambiare piano di studi
@@ -323,17 +324,32 @@ nlu:
     - Ammissioni ad anni successivi al primo
     - ammissioni ad anni successivi al primo
     - come posso essere ammesso al 2° anno della triennale in matematica?
+    - iscrizione ad anni successivi al primo
+    - trasferimento di corso secondo anno
+    - cerco informazioni per fare un passaggio di corso
+    - passaggio di corso
+    - dove trovo informazioni per cambiare corso?
+    - vorrei cambiare corso
+    - vorrei passare a Ingegneria industriale
 - intent: topic/esame_voto
   examples: |
     - Non ho il voto a libretto di un esame
     - Come mai non è stato verbalizzato il voto dell'esame Algebra 1?
+    - voto sul libretto
+    - esse3 voto
+    - non ho il voto su esse3
+    - non vedo il mio voto su esse3
 - intent: topic/esame_esse3
   examples: |
     - Non riesco ad iscrivermi ad un esame su esse3
     - Non vedo un esame su esse3
     - Non riesco a iscrivermi agli appelli d'esame, come mai?
+    - non vedo il corso su esse3
+    - non riesco ad iscrivermi ad un esame su esse3
 - intent: topic/pagamenti
   examples: |
     - pagamento tasse
     - Non vedo le tasse da pagare su esse3
     - Non vedo le tasse da pagare in esse3, come mai?
+    - non vedo la seconda rata da pagare su esse3
+    - non vedo le tasse da pagare su esse3
