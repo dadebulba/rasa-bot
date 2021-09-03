@@ -244,6 +244,7 @@ nlu:
     - Esonero tasse
     - tasse isee
     - isee
+    - Non so che tasse devo pagare
 - intent: topic/borse_studio
   examples: |
     - Vorrei accedere alla borsa di studio
